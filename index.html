@@ -7,50 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>WELCOME TO THE BOOK STORE</h1> 
   <main>
+    <h1>WELCOME TO THE BOOK STORE</h1> 
     <h2>Add a book to the store</h2>
 
-    <section>
-      
-      <div>
-        <label for="title">Book Title</label><br>
+    <section class="form">
+      <fieldset>
+        <label for="title">Book Title</label>
         <input type="text" id="title" placeholder="Book Title">
-      </div>
 
-
-      <div>
-        <label for="author">Book Author</label><br>
+        <label for="author">Book Author</label>
         <input type="text" id="author" placeholder="Book Author">
-      </div>
 
-      <div>
-        <label for="publisher">Book Publisher</label><br> 
+        <label for="publisher">Book Publisher</label>
         <input type="text" id="publisher" placeholder="Book Publisher">
-      </div>
-      
-
+      </fieldset>
+      <button id="addBook">Add Book</button>
     </section>
 
     <div class="container">
-     <button id="addBook">Add Book</button>
-
-     // User Input for Title
+     <!-- User Input for Title -->
         <div id="outputTitle"></div>
 
-     // User Input for Author
+     <!-- User Input for Author -->
         <div id="outputAuthor"></div>
 
-     // User Input for Publisher
+     <!-- User Input for Publisher -->
      <div id="outputPublisher"></div>
     </div>
 
      <section>
-
       <h2>Books in stock</h2>
-
       <table>
-
         <thead>
           <tr>
             <th>Title</th>
@@ -58,9 +46,9 @@
             <th>Publisher</th>
           </tr>
         </thead>
-
       </table>
      </section>
+
   </main>  
 
 </body>
