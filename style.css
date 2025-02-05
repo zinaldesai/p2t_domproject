@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
 * {
     box-sizing: border-box;
 }
@@ -7,11 +13,17 @@ body {
     height: 100vh;
     margin: 0;
     font-size: 16px;
+    background-color: #003366;
+/*trying to get a spaceship cursor*/  
+    cursor: url("../assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png") 16 16 auto;
 }
 
 h1, h2 {
     margin: 1em auto;
     text-align: center;
+    font-family: 'kidspace';
+    color: white;
+
 }
 
 .form {
