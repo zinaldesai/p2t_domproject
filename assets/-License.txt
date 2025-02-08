@@ -1,0 +1,9 @@
+﻿///////////////NEO SCI FI V2.0///////////////
+//NEW VERSION OF NEO SCI FI//
+
+Type: FONT TRUETYPE
+License: CCSA - Creative Commons Share Alike
+Made by: BryAlien / BryanGu
+Version: 2.0
+
+//////////////////////////////////////////////////////////

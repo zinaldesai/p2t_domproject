@@ -1,31 +1,27 @@
-@font-face {
-    font-family: 'kidspace';
-    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
-    font-weight: 200;
-    font-style: light;
+@font-face { /* Import the custom font from local */
+    font-family: 'kidspace'; /* name the font family name */
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype'); /* url for the font, pull from the assets folder */
+    font-weight: 200; /* font weight */
+    font-style: light; /* font style, */
 }
 * {
     box-sizing: border-box;
+    cursor: none; /* Hide the default cursor */
 }
-
 body {
     width: 100%;
     height: 100vh;
     margin: 0;
     font-size: 16px;
     background-color: #003366;
-/*trying to get a spaceship cursor*/  
-    cursor: url("../assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png") 16 16 auto;
+    overflow: hidden; /* Prevents the star trail from going past the border of the page*/
 }
-
 h1, h2 {
     margin: 1em auto;
     text-align: center;
     font-family: 'kidspace';
     color: white;
-
 }
-
 .form {
     width: 60vw;
     max-width: 500px;
@@ -33,23 +29,19 @@ h1, h2 {
     margin: 0 auto;
     padding-bottom: 2em;
 }
-
 label {
     display: block;
     margin: 0.5rem 0;
 }
-
 fieldset {
     border: none;
     padding: 1rem 0;
+    text-align: center;
 }
-
 input {
- 
   width: 100%;
   min-height: 2em;
 }
-
 #addBook {
     display: block;
     width: 40%;
@@ -58,7 +50,6 @@ input {
     min-width: 300px;
     font-size: 16px;
 }
-
 table {
     width: 80%;
     margin: auto;
@@ -66,13 +57,44 @@ table {
     table-layout: fixed;
     font-size: 16px;
 }
-
 td, th {
     text-align: center;
     padding: 10px;
 }
-
 tr {
     display: table-row;
+}
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed; /* Keep it on top within document*/
+    width: 30px;
+    height: 30px;
+    background: url(assets/star-icon-shiny-golden-star-symbol_160901-5359.avif) no-repeat center / contain;
+    pointer-events: none; /* Prevent the star from stopping the curser from being clickable and a target for js that is not for the star */
+    z-index: 10000; /* Keep it on top within box */
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply; /* Removes white backgrounds from img*/
+}
+/* Star Trail Effect */
+.star {
+    position: fixed; /* Keep it on top within document*/
+    width: 1px; 
+    height: 1px; 
+    background-color: gold; /* Star color */
+    border-radius: 50%; /* dot shape */
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8); /* Add a glow/blur effect */
+    pointer-events: none; /* Prevent the star from stopping the curser from being clickable and a target for js that is not for the star */
+    animation: fadeOut 1s ease-out forwards; /* Fade out effect, how long the trail is */
+}
+/* Star Trail Animation, defining how the style should change */
+@keyframes fadeOut { /* Fade out effect */
+    0% {
+        opacity: 1; /* Start with full opacity */
+        transform: scale(1); /* Start with full size */
+    }
+    100% {
+        opacity: 0; /* End with no opacity */
+        transform: scale(0); /* End with no size */
+    }
 }
 
