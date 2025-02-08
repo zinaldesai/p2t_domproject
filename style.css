@@ -18,6 +18,25 @@ body {
     cursor: url("../assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png") 16 16 auto;
 }
 
+a {
+  color: yellow;
+} 
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover, a:hover {
+    background-color: #0056b3;
+
+  }
+
 h1, h2 {
     margin: 1em auto;
     text-align: center;
@@ -76,3 +95,9 @@ tr {
     display: table-row;
 }
 
+footer {
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    padding: 20px;
+}
