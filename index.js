@@ -1,9 +1,10 @@
-const API_URL = "https://";
+const API_URL = "https://api.nytimes.com/svc/books/v3/lists/overview.json";
 const booksContainer = document.getElementById("books-container");
 const addBookButton = document.getElementById("addBook");
 const formInputs = document.querySelectorAll("input");
 const successMessage = document.getElementById("success-message");
 const loadingSpinner = document.getElementById("loading");
+
 
 // Load books on page load
 document.addEventListener("DOMContentLoaded", fetchBooks);
@@ -32,6 +33,20 @@ async function fetchBooks() {
     } finally {
         hideLoading();
     }
+}
+
+// Render books to the page
+async function renderBooks(books) { 
+    booksContainer.innerHTML = "";
+    books.forEach(book => {
+        const bookRow = document.createElement("tr");
+        // bookRow.classList.add("book-row");
+        bookRow.innerHTML = `
+            <td class="book-title">${book.title}</td>
+            <td class="book-author">${book.author}</td>
+            <td class="book-publisher">${book.publisher} <button class="delete-button" onclick="deleteBook(${book.primary_isbn13})">Delete</button></td>`
+        booksContainer.appendChild(bookRow);
+    });
 }
 
 //rocket and star trail

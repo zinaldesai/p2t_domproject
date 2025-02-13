@@ -4,6 +4,7 @@
     font-weight: 200;
     font-style: light;
 }
+
 * {
     box-sizing: border-box;
     cursor: none; 
@@ -15,8 +16,13 @@ body {
     margin: 0;
     font-size: 16px;
     background-color: #003366;
-    overflow: hidden;
+    overflow: auto;
 }
+
+/* .table-scroll {
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+} */
 
 a {
   color: yellow;
@@ -34,7 +40,6 @@ button {
 
   button:hover, a:hover {
     background-color: #0056b3;
-
   }
 
 h1, h2 {
@@ -42,7 +47,6 @@ h1, h2 {
     text-align: center;
     font-family: 'kidspace';
     color: white;
-
 }
 
 .form {
@@ -64,7 +68,6 @@ fieldset {
 }
 
 input {
- 
   width: 100%;
   min-height: 2em;
 }
@@ -101,6 +104,7 @@ footer {
     bottom: 0;
     padding: 20px;
 }
+
 /* Custom Star Cursor */
 .cursor-star {
     position: fixed;
@@ -123,6 +127,7 @@ footer {
     pointer-events: none;
     animation: fadeOut 1s ease-out forwards;
 }
+
 @keyframes fadeOut {
     0% {
         opacity: 1;
