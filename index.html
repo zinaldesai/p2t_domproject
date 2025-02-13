@@ -20,6 +20,7 @@
     <h2>Add a book to the store</h2>
 
     <section class="form">
+      <form id="bookForm">
       <fieldset>
         <label for="title">Book Title</label>
         <input type="text" id="title" placeholder="Book Title">
@@ -30,7 +31,8 @@
         <label for="publisher">Book Publisher</label>
         <input type="text" id="publisher" placeholder="Book Publisher">
       </fieldset>
-      <button id="addBook">Add Book</button>
+      <button type="submit" id="addBook">Add Book</button>
+      </form>
     </section>
 
     <div class="container">
@@ -46,6 +48,10 @@
 
      <section>
       <h2>Books in stock</h2>
+      <div id="loading" style="display: none;">Loading...</div>
+      <div id="error-message" style="display: none;"></div>
+      <div id="success-message" style="display: none;"></div>
+
       <table>
         <thead>
           <tr>
@@ -54,6 +60,7 @@
             <th>Publisher</th>
           </tr>
         </thead>
+        <tbody id="bookList"></tbody>
       </table>
      </section>
 
