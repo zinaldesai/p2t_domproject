@@ -6,6 +6,7 @@
 }
 * {
     box-sizing: border-box;
+    cursor: none; 
 }
 
 body {
@@ -14,8 +15,7 @@ body {
     margin: 0;
     font-size: 16px;
     background-color: #003366;
-/*trying to get a spaceship cursor*/  
-    cursor: url("../assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png") 16 16 auto;
+    overflow: hidden;
 }
 
 a {
@@ -100,4 +100,36 @@ footer {
     /* position: fixed; */
     bottom: 0;
     padding: 20px;
+}
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
 }
