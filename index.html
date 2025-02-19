@@ -16,8 +16,8 @@
 </div>
 
   <main>
-    <h1>WELCOME TO THE BOOK STORE</h1> 
-    <h2>Add a book to the store</h2>
+    <h1>Code & Quill Bookstore</h1> 
+    <h2>Smart Reads. Bold Code. Fearless Women.</h2>
 
     <section class="form">
       <form id="bookForm">
@@ -46,6 +46,14 @@
      <div id="outputPublisher"></div>
     </div>
 
+    <!-- creates a new section on the page specifically for featured books. -->
+    <section>
+      <!--the header for the section-->      
+            <h2>Featured Books</h2>
+      <!-- the empty container where I will insert book cards using javascript dynamically-->
+            <div class="featured-books" id="featured-books"></div>
+          </section>
+
      <section>
       <h2>Books in stock</h2>
       <div id="loading" style="display: none;">Loading...</div>
@@ -65,7 +73,7 @@
       </table>
     </div>
      </section>
-
+     
   </main>  
 
   <footer>Bookstore &copy; 2025</footer>

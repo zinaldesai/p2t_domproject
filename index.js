@@ -18,34 +18,67 @@ function hideLoading() {
     loadingSpinner.style.display = "none";
 }
 
-// Fetch books from API and display them
+// Fetch books from the API and store them
 async function fetchBooks() {
+     // disppla a loading spinner so users know something is happening.
     showLoading();
+
     try {
-        const response = await fetch(API_URL);
-        const books = await response.json();
+        const response = await fetch("https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=YOUR_API_KEY");
+        const data = await response.json();
+
+        // Extract the first book list from the response
+        const books = data.results.lists[0].books;
+
+        // Save books to local storage in case there are errors later
         localStorage.setItem("books", JSON.stringify(books));
+
+        // Display books in the "Books in Stock" table
         renderBooks(books);
+
+        // Display books in the "Featured Books" section
+        renderFeaturedBooks(books);
     } catch (error) {
         console.error("Error fetching books:", error);
+
+        // Try loading cached books
         const cachedBooks = localStorage.getItem("books");
-        if (cachedBooks) renderBooks(JSON.parse(cachedBooks));
+        if (cachedBooks) {
+            const books = JSON.parse(cachedBooks);
+            renderBooks(books);
+            renderFeaturedBooks(books);
+        }
     } finally {
+        // Hide the loading spinner when finished
         hideLoading();
     }
 }
 
-// Render books to the page
-async function renderBooks(books) { 
-    booksContainer.innerHTML = "";
-    books.forEach(book => {
-        const bookRow = document.createElement("tr");
-        // bookRow.classList.add("book-row");
-        bookRow.innerHTML = `
-            <td class="book-title">${book.title}</td>
-            <td class="book-author">${book.author}</td>
-            <td class="book-publisher">${book.publisher} <button class="delete-button" onclick="deleteBook(${book.primary_isbn13})">Delete</button></td>`
-        booksContainer.appendChild(bookRow);
+// Create and display featured books
+function renderFeaturedBooks(books) {
+    const featuredBooksContainer = document.getElementById("featured-books");
+
+    // Clear previous content
+    featuredBooksContainer.innerHTML = "";
+
+    // Get the first 3 books
+    books.slice(0, 3).forEach(book => {
+
+        // Create a new div for each book
+        const bookCard = document.createElement("div");
+
+        // Add a class for styling
+        bookCard.classList.add("book-card"):
+
+        bookCard.innerHTML = `
+            <img class="author-photo" src="https://via.placeholder.com/100" alt="Author photo">
+            <img class="book-cover" src="${book.book_image}" alt="Book cover">
+            <h3 class="book-name">${book.title}</h3>
+            <p class="book-author">by ${book.author}</p>
+            <p class="book-description">${book.description || "No description available."}</p>
+        `;
+
+        featuredBooksContainer.appendChild(bookCard); // Add the book card to the section
     });
 }
 
