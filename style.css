@@ -19,15 +19,27 @@ body {
     overflow: auto;
 }
 
-/* .table-scroll {
-    overflow-y: scroll; 
+ /* .table {
+    overflow: scroll; 
     scrollbar-width: none; 
+    overflow: auto;
 } */
 
 a {
   color: yellow;
 } 
 
+#navigation {
+    margin: auto;
+    padding: 10px 10px 0 10px;
+    text-align: right;
+}
+
+#navigation a {
+    color: white;
+    text-decoration: none;
+    
+}
 button {
     padding: 10px 20px;
     background-color: #007BFF;
@@ -65,6 +77,7 @@ label {
 fieldset {
     border: none;
     padding: 1rem 0;
+    color: white;
 }
 
 input {
@@ -87,6 +100,8 @@ table {
     border-collapse: collapse;
     table-layout: fixed;
     font-size: 16px;
+    color: white;
+    letter-spacing: 0.2rem;
 }
 
 td, th {
@@ -100,9 +115,11 @@ tr {
 
 footer {
     text-align: center;
-    /* position: fixed; */
+    position: absolute;
+    width: 100%;
     bottom: 0;
     padding: 20px;
+    color: white;
 }
 
 /* Custom Star Cursor */
