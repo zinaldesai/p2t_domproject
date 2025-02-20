@@ -194,7 +194,11 @@ function addBook(event) {
 //             <td class="book-publisher">${book.publisher} <button class="delete-button" onclick="deleteBook(${book.primary_isbn13})">Delete</button></td>`
 //         booksContainer.appendChild(bookRow);
 //     });
+
 // }
+
+// }
+
 
 
 

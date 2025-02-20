@@ -100,6 +100,9 @@ h2, h3 {
         opacity: 0;
         transform: scale(0);
     }
+
+}
+=======
 }
 
 table {
@@ -119,4 +122,5 @@ td, th {
 tr:nth-child(even) {
     background-color: #f2f2f2;
 }
+
 
