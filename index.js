@@ -1,4 +1,88 @@
-//rocket and star trail -- added to the top bc async function runs first and cursor disappears from the webpage! 
+const API_URL = "https://api.nytimes.com/svc/books/v3/lists/overview.json";
+const booksContainer = document.getElementById("books-container");
+const addBookButton = document.getElementById("addBook");
+const formInputs = document.querySelectorAll("input");
+const successMessage = document.getElementById("success-message");
+const loadingSpinner = document.getElementById("loading");
+
+
+// Load books on page load
+document.addEventListener("DOMContentLoaded", fetchBooks);
+
+// Show loading spinner
+function showLoading() {
+    loadingSpinner.style.display = "block";
+}
+// Hide loading spinner
+function hideLoading() {
+    loadingSpinner.style.display = "none";
+}
+
+// Fetch books from the API and store them
+async function fetchBooks() {
+     // disppla a loading spinner so users know something is happening.
+    showLoading();
+
+    try {
+        const response = await fetch("https://api.nytimes.com/svc/books/v3/lists/overview.json?api-key=YOUR_API_KEY");
+        const data = await response.json();
+
+        // Extract the first book list from the response
+        const books = data.results.lists[0].books;
+
+        // Save books to local storage in case there are errors later
+        localStorage.setItem("books", JSON.stringify(books));
+
+        // Display books in the "Books in Stock" table
+        renderBooks(books);
+
+        // Display books in the "Featured Books" section
+        renderFeaturedBooks(books);
+    } catch (error) {
+        console.error("Error fetching books:", error);
+
+        // Try loading cached books
+        const cachedBooks = localStorage.getItem("books");
+        if (cachedBooks) {
+            const books = JSON.parse(cachedBooks);
+            renderBooks(books);
+            renderFeaturedBooks(books);
+        }
+    } finally {
+        // Hide the loading spinner when finished
+        hideLoading();
+    }
+}
+
+// Create and display featured books
+function renderFeaturedBooks(books) {
+    const featuredBooksContainer = document.getElementById("featured-books");
+
+    // Clear previous content
+    featuredBooksContainer.innerHTML = "";
+
+    // Get the first 3 books
+    books.slice(0, 3).forEach(book => {
+
+        // Create a new div for each book
+        const bookCard = document.createElement("div");
+
+        // Add a class for styling
+        bookCard.classList.add("book-card"):
+
+        bookCard.innerHTML = `
+            <img class="author-photo" src="https://via.placeholder.com/100" alt="Author photo">
+            <img class="book-cover" src="${book.book_image}" alt="Book cover">
+            <h3 class="book-name">${book.title}</h3>
+            <p class="book-author">by ${book.author}</p>
+            <p class="book-description">${book.description || "No description available."}</p>
+        `;
+
+        featuredBooksContainer.appendChild(bookCard); // Add the book card to the section
+    });
+}
+
+//rocket and star trail
 document.addEventListener("DOMContentLoaded", () => {
     const cursorStar = document.createElement("div");
     cursorStar.classList.add("cursor-star");
@@ -35,136 +119,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-
-
-// API URL and elements
-// const API_KEY = ""
-const API_URL = "https://gutendex.com/books/";
-const booksContainer = document.getElementById("booksContainer");
-const addBookButton = document.getElementById("addBook");
-const bookForm = document.getElementById("bookForm"); 
-
-function addBook(event) {
-    event.preventDefault();
-
-    //get form values 
-    const title = document.getElementById("title").value.trim();
-    const author = document.getElementById("author").value.trim();
-    const publisher = document.getElementById("publisher").value.trim();
-
-    //ensure all form values are filled out before submitting
-    if (!title || !author || !publisher) {
-        alert("Please fill out all fields.");
-        return;
-    }
-
-    //create a new book Row for the filled form submission
-    const bookRow = document.createElement("tr");
-    bookRow.innerHTML = `
-        <td class="book-title">${title}</td>
-        <td class="book-author">${author}</td>
-        <td class="book-publisher">${publisher}</td>
-        <td><button class="delete-button">Delete</button></td>`;
-
-        booksContainer.appendChild(bookRow);
-
-        bookRow.querySelector(".delete-button").addEventListener("click", () => {
-            bookRow.remove();
-        });
-
-        //clear input fields
-        bookForm.reset();
-
-    }
-        //add event listener
-        bookForm.addEventListener("submit", addBook);
-        // window.addEventListener("DOMContentLoaded", bookList);
-
-
-
-// Render books to the page from API...removed because pre-loaded books are not needed for this project but we can add it.
-// async function bookList() {
-//     try {
-//         booksContainer.innerHTML = `<p>Loading...</p>`;
-//         const response = await fetch(API_URL);
-//         const data = await response.json(); 
-//         booksContainer.innerHTML = "";  
-
-//         //Ensure book info from API is not empty
-//         if (data.length === 0) {
-//             booksContainer.innerHTML = `<p>No books found.</p>`;
-//             return;
-//         }
-        
-//         data.results.forEach((book) => {
-//             const bookRow = document.createElement("tr"); 
-//             bookRow.innerHTML = `
-//                 <td class="book-title">${book.title}</td>
-//                 <td class="book-author">${book.authors.name}</td>
-//                 <td class="book-publisher">${book.id}</td>`;
-        
-//          booksContainer.appendChild(bookRow);
-//         });
-//     } catch (error) {
-//         booksContainer.innerHTML = `<p>Error: ${error.message}</p>`;
-//     };
-// }
-
-// addBookButton.addEventListener("click", bookList);
-
-
-
-
-
-// const formInputs = document.querySelectorAll("input");
-// const successMessage = document.getElementById("success-message");
-// const loadingSpinner = document.getElementById("loading");
-
-//delete button for boookList
-/* <button class="delete-button" onclick="deleteBook(${book.primary_isbn13})">Delete</button> */
-
-
-// Load books on page load
-// document.addEventListener("DOMContentLoaded", fetchBooks);
-
-// Show loading spinner
-// function showLoading() {
-//     loadingSpinner.style.display = "block";
-// }
-// Hide loading spinner
-// function hideLoading() {
-//     loadingSpinner.style.display = "none";
-// }
-
-// Fetch books from API and display them
-// async function fetchBooks() {
-//     showLoading();
-//     try {
-//         const response = await fetch(API_URL);
-//         const books = await response.json();
-//         localStorage.setItem("books", JSON.stringify(books));
-//         renderBooks(books);
-//     } catch (error) {
-//         console.error("Error fetching books:", error);
-//         const cachedBooks = localStorage.getItem("books");
-//         if (cachedBooks) renderBooks(JSON.parse(cachedBooks));
-//     } finally {
-//         hideLoading();
-//     }
-// }
-
-
-//     booksContainer.innerHTML = "";
-//     books.forEach(book => {
-//         const bookRow = document.createElement("tr");
-//         bookRow.classList.add("book-row");
-//         bookRow.innerHTML = `
-//             <td class="book-title">${book.title}</td>
-//             <td class="book-author">${book.author}</td>
-//             <td class="book-publisher">${book.publisher} <button class="delete-button" onclick="deleteBook(${book.primary_isbn13})">Delete</button></td>`
-//         booksContainer.appendChild(bookRow);
-//     });
-// }
-
-
-
