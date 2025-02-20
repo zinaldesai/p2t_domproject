@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
+body {
+    font-family: 'kidspace';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    background-color: #003366;
+    overflow-x: hidden;
+}
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+#mission{
+    color: navy;
+    font-size: 20px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 80%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 50px;
+}
+h2, h3 {
+    color: whitesmoke;
+    font-size: 40px;
+    letter-spacing: 10px;
+    margin: 0;
+    padding: 0;
+}
+.team-member {
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    gap: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    
+}
+
+.team-member-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.team-member img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    justify-self: start;
+}
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: whitesmoke;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}

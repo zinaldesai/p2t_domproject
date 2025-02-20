@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
+body {
+    font-family: 'kidspace';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    background-color: #003366;
+    overflow-x: hidden;
+}
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
