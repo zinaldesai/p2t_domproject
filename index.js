@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }, 500);
         }
     });
+
+    fetchBooksFromAPI(); // Loading books from API when the page loads
 });
 
 
@@ -43,6 +45,34 @@ const API_URL = "https://gutendex.com/books/";
 const booksContainer = document.getElementById("booksContainer");
 const addBookButton = document.getElementById("addBook");
 const bookForm = document.getElementById("bookForm"); 
+
+// Function to fetch books from Gutendex API
+async function fetchBooksFromAPI() {
+    try {
+        booksContainer.innerHTML = `<tr><td colspan="3">Loading books...</td></tr>`;
+        const response = await fetch(API_URL);
+        const data = await response.json();
+
+        if (!data.results || data.results.length === 0) {
+            booksContainer.innerHTML = `<tr><td colspan="3">No books found.</td></tr>`;
+            return;
+        }
+
+        booksContainer.innerHTML = ""; // Clear previous content
+
+        data.results.forEach((book) => {
+            const bookRow = document.createElement("tr");
+            bookRow.innerHTML = `
+                <td>${book.title}</td>
+                <td>${book.authors.map(author => author.name).join(", ")}</td>
+                <td>Public Domain</td> <!-- Gutendex does not provide publisher info -->
+            `;
+            booksContainer.appendChild(bookRow);
+        });
+    } catch (error) {
+        booksContainer.innerHTML = `<tr><td colspan="3">Error fetching books: ${error.message}</td></tr>`;
+    }
+}
 
 function addBook(event) {
     event.preventDefault();
