@@ -7,38 +7,53 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>WELCOME TO THE BOOK STORE</h1> 
+  
+<div id="Navigation">
+  <nav> <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
   <main>
+    <h1>WELCOME TO THE BOOK STORE</h1> 
     <h2>Add a book to the store</h2>
 
-    <section>
-      
-      <div>
-        <label for="title">Book Title</label><br>
-        <input type="text" id="title">
-      </div>
+    <section class="form">
+      <form id="bookForm">
+      <fieldset>
+        <label for="title">Book Title</label>
+        <input type="text" id="title" placeholder="Book Title">
 
-      <div>
-        <label for="author">Book Author</label><br>
-        <input type="text" id="author">
-      </div>
+        <label for="author">Book Author</label>
+        <input type="text" id="author" placeholder="Book Author">
 
-      <div>
-        <label for="publisher">Book Publisher</label><br>
-      
-        <input type="text" id="publisher">
-      </div>
-
+        <label for="publisher">Book Publisher</label>
+        <input type="text" id="publisher" placeholder="Book Publisher">
+      </fieldset>
+      <button type="submit" id="addBook">Add Book</button>
+      </form>
     </section>
 
-     <button id="addBook">Add Book</button>
+    <!-- <div class="container"> -->
+     <!-- User Input for Title -->
+        <!-- <div id="outputTitle"></div> -->
+
+     <!-- User Input for Author -->
+        <!-- <div id="outputAuthor"></div> -->
+
+     <!-- User Input for Publisher -->
+     <!-- <div id="outputPublisher"></div> -->
+    <!-- </div> -->
 
      <section>
-
       <h2>Books in stock</h2>
+      <div id="loading" style="display: none;">Loading...</div>
+      <div id="error-message" style="display: none;"></div>
+      <div id="success-message" style="display: none;"></div>
 
+    <div class="table-scroll">
       <table>
-
         <thead>
           <tr>
             <th>Title</th>
@@ -46,10 +61,14 @@
             <th>Publisher</th>
           </tr>
         </thead>
-
+        <tbody id="booksContainer"></tbody>
       </table>
+    </div>
      </section>
+
   </main>  
 
+  <footer>Bookstore &copy; 2025</footer>
+  <script src="index.js"></script>
 </body>
 </html>

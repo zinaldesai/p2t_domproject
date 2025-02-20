@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-=======
 //rocket and star trail -- added to the top bc async function runs first and cursor disappears from the webpage! 
 document.addEventListener("DOMContentLoaded", () => {
     const cursorStar = document.createElement("div");
@@ -200,4 +198,3 @@ function addBook(event) {
 
 
 
->>>>>>> Stashed changes

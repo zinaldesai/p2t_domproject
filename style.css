@@ -1,0 +1,140 @@
+@font-face {
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
+
+* {
+    box-sizing: border-box;
+    cursor: none; 
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    font-size: 16px;
+    background-color: #003366;
+    overflow: auto;
+}
+
+/* .table-scroll {
+    overflow-y: scroll; 
+    scrollbar-width: none; 
+} */
+
+a {
+  color: yellow;
+} 
+
+button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover, a:hover {
+    background-color: #0056b3;
+  }
+
+h1, h2 {
+    margin: 1em auto;
+    text-align: center;
+    font-family: 'kidspace';
+    color: white;
+}
+
+.form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+fieldset {
+    border: none;
+    padding: 1rem 0;
+}
+
+input {
+  width: 100%;
+  min-height: 2em;
+}
+
+#addBook {
+    display: block;
+    width: 40%;
+    margin: 1em auto;
+    height: 2em;
+    min-width: 300px;
+    font-size: 16px;
+}
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 16px;
+}
+
+td, th {
+    text-align: center;
+    padding: 10px;
+}
+
+tr {
+    display: table-row;
+}
+
+footer {
+    text-align: center;
+    /* position: fixed; */
+    bottom: 0;
+    padding: 20px;
+}
+
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
