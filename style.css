@@ -144,6 +144,7 @@ footer {
     color: #007bff;
     text-decoration: none;
 }
+
 .footer a:hover {
     text-decoration: underline;
 }
@@ -161,6 +162,7 @@ footer {
 .social-icons a:hover {
     color: #0056b3;
 }
+
 
 /* Custom Star Cursor */
 .cursor-star {
@@ -194,4 +196,8 @@ footer {
         opacity: 0;
         transform: scale(0);
     }
+
 }
+
+}
+

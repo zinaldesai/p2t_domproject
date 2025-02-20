@@ -100,4 +100,27 @@ h2, h3 {
         opacity: 0;
         transform: scale(0);
     }
+
 }
+=======
+}
+
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    color: black;
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+
