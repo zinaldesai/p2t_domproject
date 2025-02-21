@@ -6,16 +6,35 @@
     <title>DOM Project</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
-<div id="Navigation">
-  <nav> <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-    <a href="Cart.html">Cart</a>
-    <a href="Wishlist.html">Wishlist</a>
-  </nav>
+<body>  
+  <nav class="navbar">
+
+    <!-- Hamburger Button -->
+    <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+
+<!-- Side Menu -->
+<div class="side-menu" id="side-menu">
+  <div class="search-container">
+    <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+    <button>
+        Search <i class="fas fa-search"></i>
+    </button>
 </div>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li><a href="cart.html">Cart</a></li>
+        <li><a href="login.html">Login or <br> Create Account</a></li>
+    </ul>
+</div>
+  
 
 <!-- <title>I'm Not a Robot CAPTCHA</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -28,14 +47,6 @@
         <button type="submit">Submit</button>
     </form>
 </body> -->
-
-
-<div class="search-container">
-  <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
-  <button>
-      Search <i class="fas fa-search"></i>
-  </button>
-</div>
 
 <div class="login-container">
 <br>
@@ -82,10 +93,6 @@
       <div id="error-message" style="display: none;"></div>
       <div id="success-message" style="display: none;"></div>
 
-      
-
-
-
     <div class="table-scroll">
       <table>
         <thead>
@@ -102,7 +109,6 @@
 
   </main>  
 
-
   <div class="footer">
     <a href="#">Privacy Policy</a>
     <a href="#">Terms of Service</a>
@@ -116,11 +122,7 @@
       <a href="#"><i class="fab fa-instagram"></i></a>
       <a href="#"><i class="fab fa-linkedin-in"></i></a>
 </div>
-
-  <footer>Bookstore &copy; 2025</footer>
-  <script src="index.js"></script>
   
-
   <footer>Bookstore &copy; 2025</footer>
   <script src="index.js"></script>
 

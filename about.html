@@ -8,11 +8,32 @@
 </head>
 
 <body>
-    <div id="Navigation">
-        <nav> 
-        <a href="index.html">Home</a>
-        <a href="contact.html">Contact</a>
-        </nav> 
+    <nav class="navbar">
+
+        <!-- Hamburger Button -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+    
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+      <div class="search-container">
+        <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+        <button>
+            Search <i class="fas fa-search"></i>
+        </button>
+    </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="wishlist.html">Wishlist</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="login.html">Login or <br> Create Account</a></li>
+        </ul>
     </div>
 
     <h1> WE ARE CELESTIAL BOOKS </h1>
