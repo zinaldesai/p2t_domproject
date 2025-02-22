@@ -120,7 +120,6 @@ hamburger.addEventListener("click", () => { // When the hamburger is clicked....
     sideMenu.classList.toggle("active"); // Add or remove the active class so you can see the menu
     hamburger.classList.toggle("active"); // Add or remove the active class so you cant see the menu
 });
-
 // Render books to the page from API...removed because pre-loaded books are not needed for this project but we can add it.
 // async function bookList() {
 //     try {

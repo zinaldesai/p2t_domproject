@@ -19,6 +19,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    cursor: none;
 }
 
 /* Navbar Styling */
@@ -183,22 +184,31 @@ h2, h3 {
     }
 
 }
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: white;
-    color: black;
-}
-
-td, th {
+.search-container input {
+    border: none;
+    outline: none;
     padding: 10px;
-    border: 1px solid black;
-    text-align: center;
+    flex: 1; /* Allows it to expand within container */
+    border-radius: 5px;
+    max-width: 100%; /* Prevents overflow */
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.search-container button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.search-container button:hover {
+    background: #0056b3;
+}
 
+.search-container button i {
+    margin-right: 5px;
+}
