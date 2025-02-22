@@ -260,3 +260,6 @@ h3 {
     justify-content: center;
     max-width: 55px;
 }
+.search-container button:hover {
+    background: #0056b3;
+}

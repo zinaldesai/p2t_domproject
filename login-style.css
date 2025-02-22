@@ -189,6 +189,9 @@ h1 {
     flex-shrink: 0; /* Prevents the button from shrinking */
     box-sizing: border-box; /* Ensures consistent sizing */
 }
+.search-container button:hover {
+    background: #0056b3;
+}
 /* ----------------------------- Login & Form Box Styling ----------------------------- */
 .login-container {
     display: flex;

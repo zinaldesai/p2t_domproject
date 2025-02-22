@@ -5,7 +5,6 @@
     font-weight: 200;
     font-style: light;
 }
-
 body {
     font-family: 'kidspace';
     font-size: 20px;
@@ -226,4 +225,7 @@ h2, h3 {
     align-items: center;
     justify-content: center;
     max-width: 55px;
+}
+.search-container button:hover {
+    background: #0056b3;
 }
