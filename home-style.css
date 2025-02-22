@@ -1,0 +1,231 @@
+/* ----------------------------- Fonts & Global Styles ----------------------------- */
+@font-face { 
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
+body {
+    font-family: 'kidspace';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    background-color: #003366;
+    overflow-x: hidden;
+}
+/* Reset styles for all elements */
+* {
+    box-sizing: border-box;
+    cursor: none; 
+}
+/* ----------------------------- Custom Cursor & Animations ----------------------------- */
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: whitesmoke;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+/* ----------------------------- Header & Text Styles ----------------------------- */
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    border: 2px solid navy;
+    box-sizing: border-box;
+}
+h2 {
+    font-size: 100px;
+    letter-spacing: 0.4em;
+    color: #0c0037;
+    text-align: center;
+}
+/* Staff Picks & Author of the Week Styles */
+h3 {
+    font-size: 50px;
+    text-align: center;
+    color:#0c0037;
+    border: 2px white ;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+}
+/* ----------------------------- Navigation & Menus ----------------------------- */
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 150;
+}
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+    position: relative; /* Ensure the spans are in the same stacking context */
+    z-index: 200; /* Ensure spans stay on top */
+}
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #0c0037;
+    padding-top: 60px;
+    transition: left 0.4s ease-in-out;
+    z-index: 100;
+}
+/* Menu List */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.side-menu li {
+    padding: 15px;
+    text-align: center;
+}
+.side-menu li:hover {
+    background-color: rgb(2, 2, 112);
+}
+.side-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+}
+.side-menu.active {
+    left: 0;
+}
+/* Hamburger Menu Animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* ----------------------------- Staff Picks & Author Sections ----------------------------- */
+.staff-picks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px white;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    list-style: none;
+}
+.staff-picks li {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.staff-picks a {
+    text-decoration: none;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px white;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.staff-picks a:hover {
+    background-color: white;
+    color: lightblue;
+}
+.staff-picks p {
+    font-size: 20px;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px blue;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Author of the Week */
+.author-of-the-week {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px blue;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.author-of-the-week li {
+    list-style: none;
+    font-size: 60px;
+}
+/* ----------------------------- Form Elements ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box; 
+}
+.search-container button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 55px; /* Limit the button width */
+}
