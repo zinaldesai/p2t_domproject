@@ -14,6 +14,88 @@ body {
     background-color: #003366;
     overflow-x: hidden;
 }
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #0c0037;
+    color: white;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100; /* Make sure it's on top of everything, think layers */
+}
+
+.hamburger span { /* The three lines of the hamburger */
+    width: 30px;
+    height: 4px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Side Menu (Hidden by default) */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Starts off-screen */
+    width: 250px;
+    height: 100vh;
+    background: #0c0037;
+    padding-top: 60px;
+    transition: left 0.4s ease-in-out;
+}
+
+/* Menu List */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu li {
+    padding: 15px;
+    text-align: center;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+}
+
+/* make the menu pop out when clicked*/
+.side-menu.active {
+    left: 0;
+}
+
+/* Hamburger Animation, three bars move when clicked */
+.hamburger.active span:nth-child(1) { /* Select the first 'span', meaning the first line */
+    transform: translateY(8px) rotate(45deg); /* Rotate 45 degrees */
+}
+
+.hamburger.active span:nth-child(2) { /* Select the second 'span', meaning the second line */
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) { /* Select the third 'span', meaning the third line */
+    transform: translateY(-8px) rotate(-45deg); /* Negative value to rotate in the opposite direction of the first span */
+}
+
 h1 {
     color: navy;
     font-size: 60px;
@@ -102,25 +184,31 @@ h2, h3 {
     }
 
 }
-=======
-}
-
-table {
-    width: 90%;
-    margin: 20px auto;
-    border-collapse: collapse;
-    background: white;
-    color: black;
-}
-
-td, th {
+.search-container input {
+    border: none;
+    outline: none;
     padding: 10px;
-    border: 1px solid black;
-    text-align: center;
+    flex: 1; /* Allows it to expand within container */
+    border-radius: 5px;
+    max-width: 100%; /* Prevents overflow */
 }
 
-tr:nth-child(even) {
-    background-color: #f2f2f2;
+.search-container button {
+    background: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.search-container button:hover {
+    background: #0056b3;
+}
 
+.search-container button i {
+    margin-right: 5px;
+}
