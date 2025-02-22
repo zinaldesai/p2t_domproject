@@ -1,9 +1,11 @@
-@font-face {
+/* ----------------------------- Fonts & Global Styles ----------------------------- */
+@font-face { 
     font-family: 'kidspace';
     src: url("assets/Kidspace-DEMO.ttf") format('truetype');
     font-weight: 200;
     font-style: light;
 }
+
 body {
     font-family: 'kidspace';
     font-size: 20px;
@@ -11,91 +13,106 @@ body {
     padding: 0;
     letter-spacing: 0.3em;
     text-align: center;
-    background-color: #003366;
+    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    color: ghostwhite;
 }
-/* Basic Reset */
+/* Background Video Styling */
+#space-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+/* Dark overlay for better readability */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    z-index: 0;
+}
+/* Reset styles for all elements */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    cursor: none;
+    cursor: none; 
 }
-
-/* Navbar Styling */
+/* ----------------------------- Navbar & Menu Styling ----------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
     background: #0c0037;
-    color: white;
+    color: ghostwhite;
 }
-
 /* Hamburger Menu */
 .hamburger {
     display: flex;
     flex-direction: column;
     cursor: pointer;
-    z-index: 100; /* Make sure it's on top of everything, think layers */
+    z-index: 150;
 }
-
-.hamburger span { /* The three lines of the hamburger */
+.hamburger span {
     width: 30px;
     height: 4px;
-    background: white;
+    background: ghostwhite;
     margin: 5px 0;
     transition: all 0.4s ease-in-out;
+    position: relative; /* Ensure the spans are in the same stacking context */
+    z-index: 200; /* Ensure spans stay on top */
 }
-
-/* Side Menu (Hidden by default) */
+/* Side Menu */
 .side-menu {
     position: fixed;
     top: 0;
-    left: -250px; /* Starts off-screen */
+    left: -250px;
     width: 250px;
     height: 100vh;
     background: #0c0037;
     padding-top: 60px;
     transition: left 0.4s ease-in-out;
+    z-index: 100;
 }
-
 /* Menu List */
 .side-menu ul {
     list-style: none;
     padding: 0;
 }
-
 .side-menu li {
     padding: 15px;
     text-align: center;
 }
-
+.side-menu li:hover {
+    background-color: rgb(2, 2, 112);
+}
 .side-menu a {
     text-decoration: none;
-    color: white;
+    color: ghostwhite;
     font-size: 1.2rem;
     display: block;
 }
-
-/* make the menu pop out when clicked*/
 .side-menu.active {
     left: 0;
 }
-
-/* Hamburger Animation, three bars move when clicked */
-.hamburger.active span:nth-child(1) { /* Select the first 'span', meaning the first line */
-    transform: translateY(8px) rotate(45deg); /* Rotate 45 degrees */
+/* Hamburger Menu Animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
-
-.hamburger.active span:nth-child(2) { /* Select the second 'span', meaning the second line */
+.hamburger.active span:nth-child(2) {
     opacity: 0;
 }
-
-.hamburger.active span:nth-child(3) { /* Select the third 'span', meaning the third line */
-    transform: translateY(-8px) rotate(-45deg); /* Negative value to rotate in the opposite direction of the first span */
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
-
+/* ----------------------------- Header & Text Styles ----------------------------- */
 h1 {
     color: navy;
     font-size: 60px;
@@ -104,31 +121,32 @@ h1 {
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: whitesmoke;
+    background-color: ghostwhite;
 }
-#mission{
+#mission {
     color: navy;
     font-size: 20px;
     margin: 0 auto;
     padding: 20px;
     width: 80%;
     height: 100%;
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     border-radius: 50px;
 }
 h2, h3 {
-    color: whitesmoke;
+    color: ghostwhite;
     font-size: 40px;
     letter-spacing: 10px;
     margin: 0;
     padding: 0;
 }
+/* ----------------------------- Team Member Styling ----------------------------- */
 .team-member {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     border-radius: 50px;
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -136,21 +154,19 @@ h2, h3 {
     gap: 20px;
     max-width: 100%;
     box-sizing: border-box;
-    
+    color: purple;
 }
-
 .team-member-info {
     display: flex;
     flex-direction: column;
 }
-
 .team-member img {
     width: 100%;
     height: auto;
     max-width: 150px;
     justify-self: start;
 }
-/* Custom Star Cursor */
+/* ----------------------------- Custom Cursor & Animations ----------------------------- */
 .cursor-star {
     position: fixed;
     width: 60px;
@@ -166,13 +182,12 @@ h2, h3 {
     position: fixed;
     width: 1px; 
     height: 1px; 
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     pointer-events: none;
     animation: fadeOut 1s ease-out forwards;
 }
-
 @keyframes fadeOut {
     0% {
         opacity: 1;
@@ -182,33 +197,33 @@ h2, h3 {
         opacity: 0;
         transform: scale(0);
     }
-
+}
+/* ----------------------------- Search Bar Styling ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
 }
 .search-container input {
     border: none;
     outline: none;
     padding: 10px;
-    flex: 1; /* Allows it to expand within container */
+    flex-grow: 1;
     border-radius: 5px;
-    max-width: 100%; /* Prevents overflow */
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box; 
 }
-
 .search-container button {
-    background: #007bff;
+    background: purple;
     border: none;
-    color: white;
+    color: ghostwhite;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.search-container button:hover {
-    background: #0056b3;
-}
-
-.search-container button i {
-    margin-right: 5px;
+    max-width: 55px;
 }

@@ -12,8 +12,31 @@ body {
     padding: 0;
     letter-spacing: 0.3em;
     text-align: center;
-    background-color: #003366;
+    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    color: ghostwhite;
+}
+/* Background Video Styling */
+#space-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+/* Dark overlay for better readability */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    z-index: 0;
 }
 /* Reset styles for all elements */
 * {
@@ -37,7 +60,7 @@ body {
     position: fixed;
     width: 1px; 
     height: 1px; 
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     pointer-events: none;
@@ -62,14 +85,13 @@ h1 {
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: whitesmoke;
-    border: 2px solid navy;
+    background-color: rgba(245, 245, 245, 0.735);
     box-sizing: border-box;
 }
 h2 {
-    font-size: 100px;
-    letter-spacing: 0.4em;
-    color: #0c0037;
+    font-size: 75px;
+    letter-spacing: 0.2em;
+    color: ghostwhite;
     text-align: center;
 }
 /* Staff Picks & Author of the Week Styles */
@@ -77,10 +99,10 @@ h3 {
     font-size: 50px;
     text-align: center;
     color:#0c0037;
-    border: 2px white ;
+    border: 2px ghostwhite ;
     border-radius: 10px;
     padding: 10px;
-    background-color: white;
+    background-color: rgba(245, 245, 245, 0.735);
     display: inline-block;
 }
 /* ----------------------------- Navigation & Menus ----------------------------- */
@@ -94,7 +116,7 @@ h3 {
 .hamburger span {
     width: 30px;
     height: 4px;
-    background: white;
+    background: ghostwhite;
     margin: 5px 0;
     transition: all 0.4s ease-in-out;
     position: relative; /* Ensure the spans are in the same stacking context */
@@ -126,7 +148,7 @@ h3 {
 }
 .side-menu a {
     text-decoration: none;
-    color: white;
+    color: ghostwhite;
     font-size: 1.2rem;
     display: block;
 }
@@ -149,8 +171,8 @@ h3 {
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    border: 2px white;
-    background-color: white;
+    border: 2px ghostwhite;
+    background-color:rgba(245, 245, 245, 0.735);
     border-radius: 10px;
     font-size: 20px;
     list-style: none;
@@ -166,13 +188,13 @@ h3 {
     color: #0c0037;
     font-weight: bold;
     padding: 5px 10px;
-    border: 2px white;
+    border: 2px ghostwhite;
     border-radius: 10px;
     background-color: white;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .staff-picks a:hover {
-    background-color: white;
+    background-color: ghostwhite;
     color: lightblue;
 }
 .staff-picks p {
@@ -182,17 +204,18 @@ h3 {
     padding: 5px 10px;
     border: 2px blue;
     border-radius: 10px;
-    background-color: white;
+    background-color: ghostwhite;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 /* Author of the Week */
 .author-of-the-week {
     display: flex;
+    color:#0c0037;
     justify-content: center;
     gap: 20px;
     padding: 20px;
     border: 2px blue;
-    background-color: white;
+    background-color: ghostwhite;
     border-radius: 10px;
     font-size: 20px;
 }
@@ -218,14 +241,14 @@ h3 {
     box-sizing: border-box; 
 }
 .search-container button {
-    background: #007bff;
+    background: purple;
     border: none;
-    color: white;
+    color: ghostwhite;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 55px; /* Limit the button width */
+    max-width: 55px;
 }
