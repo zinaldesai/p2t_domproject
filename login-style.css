@@ -60,7 +60,7 @@ body {
     position: fixed;
     width: 1px; 
     height: 1px; 
-    background-color: ghostwhite;
+    background-color: whitesmoke;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     pointer-events: none;
@@ -85,26 +85,10 @@ h1 {
     padding: 20px;
     width: 100%;
     height: 100%;
-    background-color: rgba(245, 245, 245, 0.735);
+    background-color: whitesmoke;
     box-sizing: border-box;
 }
-h2 {
-    font-size: 75px;
-    letter-spacing: 0.2em;
-    color: ghostwhite;
-    text-align: center;
-}
-/* Staff Picks & Author of the Week Styles */
-h3 {
-    font-size: 50px;
-    text-align: center;
-    color:#0c0037;
-    border: 2px ghostwhite ;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: rgba(245, 245, 245, 0.735);
-    display: inline-block;
-}
+
 /* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
     display: flex;
@@ -173,90 +157,66 @@ h3 {
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-/* ----------------------------- Staff Picks & Author Sections ----------------------------- */
-.staff-picks {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border: 2px ghostwhite;
-    background-color:rgba(245, 245, 245, 0.735);
-    border-radius: 10px;
-    font-size: 20px;
-    list-style: none;
-}
-.staff-picks li {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-}
-.staff-picks a {
-    text-decoration: none;
-    color: #0c0037;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 2px ghostwhite;
-    border-radius: 10px;
-    background-color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-.staff-picks a:hover {
-    background-color: ghostwhite;
-    color: lightblue;
-}
-.staff-picks p {
-    font-size: 20px;
-    color: #0c0037;
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 2px blue;
-    border-radius: 10px;
-    background-color: ghostwhite;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-/* Author of the Week */
-.author-of-the-week {
-    display: flex;
-    color:#0c0037;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    border: 2px blue;
-    background-color: ghostwhite;
-    border-radius: 10px;
-    font-size: 20px;
-}
-.author-of-the-week li {
-    list-style: none;
-    font-size: 60px;
-}
 /* ----------------------------- Form Elements ----------------------------- */
 .search-container {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: stretch; /* Ensures both elements are the same height */
     width: 100%;
+    max-width: 400px; /* Optional: Set a reasonable max-width for layout */
 }
+/* Adjust input styling */
 .search-container input {
     border: none;
     outline: none;
     padding: 10px;
     flex-grow: 1;
     border-radius: 5px;
-    max-width: 100%;
-    white-space: nowrap;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Ensures padding doesn’t expand beyond container */
 }
+/* Adjust button styling */
 .search-container button {
+    width: 60px; /* Explicit width to prevent shrinking */
     background: purple;
     border: none;
     color: ghostwhite;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 55px;
+    flex-shrink: 0; /* Prevents the button from shrinking */
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+/* ----------------------------- Login & Form Box Styling ----------------------------- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    color:#0c0037;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    color:purple;
 }
