@@ -2,19 +2,45 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us</title>
     <link rel="stylesheet" href="contact.css">
+    <title>Contact Us</title>
 </head>
 <body>
-    <main>
-        <h1>Contact Us</h1>
-        <form>
-            
-        </form>
-        </table>
-        
-    </main>
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline id="space-video">
+        <source src="assets/906_purple_space_1080p_hd12801080p12000br.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  
+    <!--Slow down background video-->
+    <script>
+        document.getElementById("space-video").playbackRate = 0.3;
+    </script>
     
+    <div id="navigation">
+        <nav> 
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    <h1>Contact Us</h1>
+    <section class="form">
+        <form id="contactForm">
+        <fieldset>
+          <label for="title">Name:</label>
+          <input type="text" id="name" required>
+  
+          <label for="email">Email:</label>
+          <input type="email" id="email" required>
+  
+          <label for="message">Message:</label>
+          <textarea type="text" id="message" required></textarea>
+        </fieldset>
+        <button type="submit" id="send">Send</button>
+        </form>
+      </section>
 </body>
 </html>
