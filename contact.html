@@ -7,14 +7,83 @@
     <link rel="stylesheet" href="contact.css">
 </head>
 <body>
-    <main>
-        <h1>Contact Us</h1>
+  <video autoplay loop muted playsinline id="space-video">
+    <source src="assets/906_purple_space_1080p_hd12801080p12000br.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+  <nav class="navbar">
+<!-- Hamburger Button -->
+            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+<!-- Side Menu -->
+        <div class="side-menu" id="side-menu">
+            <div class="search-container">
+                <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+                <button>
+                    Search <i class="fas fa-search"></i>
+                </button>
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Login or <br> Create Account</a></li>
+            </ul>
+        </div>
+  <main>
+    <h1>Contact Us</h1>
+      <h3>We would love to hear from you!</h3>
         <form>
-            
-        </form>
-        </table>
-        
-    </main>
-    
+<!-- First Name Field -->
+          <div class="form-group">
+            <label for="First_Name"><strong>First</strong></label>
+              <input type="text" placeholder="Ash" name="First_Name" id="First_Name" required>
+          </div>
+<!-- Last Name Field -->
+          <div class="form-group">
+            <label for="Last_Name"><strong>Last</strong></label>
+              <input type="text" placeholder="Green" name="Last_Name" id="Last_Name" required>
+          </div>
+<!-- Pronouns Field -->
+          <div class="form-group">
+            <label for="Pronouns"><strong>Pronouns</strong></label>
+              <input type="text" placeholder="Ze/Hir" name="Pronouns" id="Pronouns" required>
+          </div>
+<!-- Email Field -->
+          <div class="form-group">
+            <label for="Email"><strong>Email</strong></label>
+              <input type="email" placeholder="email@domain.com" name="Email" id="Email" required>
+          </div>
+<!-- Message Textarea -->
+          <div class="form-group">
+            <textarea name="reply" placeholder="Send us a message!" required></textarea>
+          </div>
+<!-- Submit Button -->
+          <div class="form-group">
+          <button type="submit">Submit</button>
+          </div>
+        </form> 
+  </main>
+    <footer>
+      <div class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Contact Us</a>
+        <p>8989 Cosmic Lane, Barnes Noble, NY USA</p>
+      </div>
+      <div class="social-icons">
+<!-- aria-label enhances the accessibility of icons, such as social media links, by giving them descriptive labels -->
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <p class="copyright">Bookstore &copy; 2025</p>
+    </footer>    
+    <script src="about-script.js" defer></script>
 </body>
 </html>

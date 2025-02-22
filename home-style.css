@@ -43,7 +43,69 @@ body {
     box-sizing: border-box;
     cursor: none; 
 }
-/* ----------------------------- Navbar & Menu Styling ----------------------------- */
+/* ----------------------------- Custom Cursor & Animations ----------------------------- */
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: multiply;
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: ghostwhite;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: fadeOut 1s ease-out forwards;
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+/* ----------------------------- Header & Text Styles ----------------------------- */
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(245, 245, 245, 0.735);
+    box-sizing: border-box;
+}
+h2 {
+    font-size: 75px;
+    letter-spacing: 0.2em;
+    color: ghostwhite;
+    text-align: center;
+}
+/* Staff Picks & Author of the Week Styles */
+h3 {
+    font-size: 50px;
+    text-align: center;
+    color:#0c0037;
+    border: 2px ghostwhite ;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: rgba(245, 245, 245, 0.735);
+    display: inline-block;
+}
+/* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -111,93 +173,65 @@ body {
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-/* ----------------------------- Header & Text Styles ----------------------------- */
-h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: ghostwhite;
-}
-#mission {
-    color: navy;
-    font-size: 20px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 80%;
-    height: 100%;
-    background-color: ghostwhite;
-    border-radius: 50px;
-}
-h2, h3 {
-    color: ghostwhite;
-    font-size: 40px;
-    letter-spacing: 10px;
-    margin: 0;
-    padding: 0;
-}
-/* ----------------------------- Team Member Styling ----------------------------- */
-.team-member {
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: ghostwhite;
-    border-radius: 50px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: center;
-    gap: 20px;
-    max-width: 100%;
-    box-sizing: border-box;
-    color: purple;
-}
-.team-member-info {
+/* ----------------------------- Staff Picks & Author Sections ----------------------------- */
+.staff-picks {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px ghostwhite;
+    background-color:rgba(245, 245, 245, 0.735);
+    border-radius: 10px;
+    font-size: 20px;
+    list-style: none;
 }
-.team-member img {
-    width: 100%;
-    height: auto;
-    max-width: 150px;
-    justify-self: start;
+.staff-picks li {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
-/* ----------------------------- Custom Cursor & Animations ----------------------------- */
-.cursor-star {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
+.staff-picks a {
+    text-decoration: none;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px ghostwhite;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* Star Trail Effect */
-.star {
-    position: fixed;
-    width: 1px; 
-    height: 1px; 
+.staff-picks a:hover {
     background-color: ghostwhite;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    animation: fadeOut 1s ease-out forwards;
+    color: lightblue;
 }
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0);
-    }
+.staff-picks p {
+    font-size: 20px;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px blue;
+    border-radius: 10px;
+    background-color: ghostwhite;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-/* ----------------------------- Search Bar Styling ----------------------------- */
+/* Author of the Week */
+.author-of-the-week {
+    display: flex;
+    color:#0c0037;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px blue;
+    background-color: ghostwhite;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.author-of-the-week li {
+    list-style: none;
+    font-size: 60px;
+}
+/* ----------------------------- Form Elements ----------------------------- */
 .search-container {
     display: flex;
     gap: 10px;
