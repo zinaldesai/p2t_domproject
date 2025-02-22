@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Project</title>
+    <link rel="stylesheet" href="add-books-style.css">
+</head>
+<body>  
+  <nav class="navbar">
+<!-- Hamburger Button -->
+      <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+      </div>
+  </nav>
+<!-- Side Menu -->
+  <div class="side-menu" id="side-menu">
+    <div class="search-container">
+        <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+        <button>
+            Search <i class="fas fa-search"></i>
+        </button>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Login or <br> Create Account</a></li>
+    </ul>
+  </div>
+  <main>
+    <h2>Add a book to the store</h2>
+    <section class="form">
+      <form id="bookForm">
+        <fieldset>
+<!-- required ensures form validation by notifying users to fill out necessary fields -->
+          <label for="title">Book Title</label>
+          <input type="text" id="title" placeholder="Book Title" required>
+          <label for="author">Book Author</label>
+          <input type="text" id="author" placeholder="Book Author" required>
+          <label for="publisher">Book Publisher</label>
+          <input type="text" id="publisher" placeholder="Book Publisher" required>
+        </fieldset>
+        <button type="submit" id="addBook">Add Book</button>
+      </form>
+    </section>
+    <section>
+      <h2>Books in stock</h2>
+      <div id="loading" style="display: none;">Loading...</div>
+<!-- use aria-live="polite" for announcing dynamic changes like success or error messages -->
+      <div id="error-message" aria-live="polite" style="display: none;"></div>
+      <div id="success-message" aria-live="polite" style="display: none;"></div>
+      <div class="table-scroll">
+        <table>
+<!-- caption rovides a title for the table to improve screen reader navigation. -->
+          <caption>Books Available in Stock</caption>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Publisher</th>
+            </tr>
+          </thead>
+          <tbody id="booksContainer"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Contact Us</a>
+      <p>8989 Cosmic Lane, Barnes Noble, NY USA</p>
+    </div>
+    <div class="social-icons">
+<!-- aria-label enhances the accessibility of icons, such as social media links, by giving them descriptive labels -->
+      <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <p class="copyright">Bookstore &copy; 2025</p>
+  </footer>
+  <script src="index.js" defer></script>
+</body>
+</html>

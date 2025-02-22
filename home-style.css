@@ -156,36 +156,89 @@ h1 {
     transform: translateY(-8px) rotate(-45deg); /* Negative value to rotate in the opposite direction of the first span */
 }
 
-h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: whitesmoke;
+h1, h2 {
+    color: #0c0037;
+    text-align: center;
 }
-h1, h3 {
-    margin-bottom: 10px;
-  }  
-form div {
-    margin-bottom: 15px;
-  }
-  
-  textarea, button {
-    margin-top: 10px;
-  }
-  button {
-    padding: 10px 20px;
-    background-color: #0c0037;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #003366;
-  }
-  
+h1 {
+    font-size: 100px;
+}
+h2 {
+    font-size: 150px;
+    letter-spacing: 0.2em;
+}
+/* staff picks box */
+h3 {
+    font-size: 50px;
+    text-align: center;
+    color:#0c0037;
+    border: 2px white ;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    display: inline-block;
+
+}
+
+/* Staff Picks */
+.staff-picks  {  
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px white;
+    line-height: 1;
+    padding: 0;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+    list-style: none;
+}
+.staff-picks li {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+.staff-picks a {
+    text-decoration: none;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px white;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.staff-picks a:hover, .author-of-the-week a:hover {
+    background-color: white;
+    color: lightblue;
+}
+.staff-picks p {
+    font-size: 20px;
+    text-decoration: none;
+    color: #0c0037;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 2px blue;
+    border-radius: 10px;
+    background-color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Author of the Week */
+.author-of-the-week {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 2px blue;
+    line-height: 1;
+    padding: 0;
+    background-color: white;
+    border-radius: 10px;
+    font-size: 20px;
+}
+.author-of-the-week li {
+    list-style: none;
+    font-size: 60px;
+}
