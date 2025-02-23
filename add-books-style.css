@@ -1,4 +1,29 @@
-/* Background Video Styling */
+/* ----------------------------- Fonts & Global Styles ----------------------------- */
+@font-face {
+    font-family: 'kidspace';
+    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
+    font-weight: 200;
+    font-style: light;
+}
+body {
+    font-family: 'kidspace';
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    color: #0056b3;
+}
+/* Reset styles for all elements */
+* {
+    box-sizing: border-box;
+    cursor: none; 
+}
+/* ----------------------------- Background Video Styling ----------------------------- */
 #space-video {
     position: fixed;
     top: 0;
@@ -8,7 +33,6 @@
     object-fit: cover;
     z-index: -1;
 }
-
 /* Dark overlay for better readability */
 .overlay {
     position: fixed;
@@ -16,134 +40,53 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    background: rgba(0, 0, 0, 0.5);
     z-index: 0;
 }
-
-/* Ensure content is above the video */
-body {
-    position: relative;
-    z-index: 1;
-    color: white; /* Ensures text is readable */
-    font-family: Arial, sans-serif;
-}
-
-
-@font-face {
-    font-family: 'kidspace';
-    src: url("assets/Kidspace-DEMO.ttf") format('truetype');
-    font-weight: 200;
-    font-style: light;
-}
-
-* {
-    box-sizing: border-box;
-    cursor: none; 
-}
-
-body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    font-size: 16px;
-    background-color: #003366;
-    overflow: auto;
-}
-
-/* .table-scroll {
-    overflow-y: scroll; 
-    scrollbar-width: none; 
-} */
-
-a {
-  color: yellow;
-} 
-.search-container {
-    display: flex;
-    align-items: center; /* Fixes misalignment */
-    background: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px; /* Prevents it from being too wide */
-    width: 100%;
-}
-
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 10px;
-    flex: 1; /* Allows it to expand within container */
-    border-radius: 5px;
-    max-width: 100%; /* Prevents overflow */
-}
-
-.search-container button {
-    background: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-container button:hover {
-    background: #0056b3;
-}
-
-.search-container button i {
-    margin-right: 5px;
-}
-
-
-button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-
-  button:hover, a:hover {
-    background-color: #0056b3;
-  }
-
-h1, h2 {
+/* ----------------------------- Typography ----------------------------- */
+h1{
     margin: 1em auto;
     text-align: center;
     font-family: 'kidspace';
-    color: white;
-    font-size: xx-large
+    font-size: 60px;
+    color: ghostwhite;
+    padding: 10px;
 }
-
+caption {
+    margin: 1em auto;
+    text-align: center;
+    font-family: 'kidspace';
+    font-size: xx-large;
+    color: ghostwhite;
+    padding: 10px;
+}
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+a {
+    color: ghostwhite;
+}
+a:hover {
+    background-color: #0056b3;
+}
+/* ----------------------------- Forms ----------------------------- */
 .form {
     width: 60vw;
     max-width: 500px;
     min-width: 300px;
     margin: 0 auto;
-    padding-bottom: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    background-color: ghostwhite;
+    color:#0056b3;
+    border-radius: 30px;
 }
-
-label {
-    display: block;
-    margin: 0.5rem 0;
-}
-
-fieldset {
-    border: none;
-    padding: 1rem 0;
-}
-
 input {
-  width: 100%;
-  min-height: 2em;
+    width: 100%;
+    min-height: 2em;
+    border-radius: 30px;
 }
-
 #addBook {
     display: block;
     width: 40%;
@@ -152,37 +95,143 @@ input {
     min-width: 300px;
     font-size: 16px;
 }
-
+/* ----------------------------- Tables ----------------------------- */
 table {
     width: 80%;
     margin: auto;
     border-collapse: collapse;
     table-layout: fixed;
     font-size: 16px;
-    color:ghostwhite
+    color: ghostwhite;
+    background-color: #0c0037;
+    padding: 20px;
+    border-radius: 30px;
+    border-color: aquamarine;
 }
-
 td, th {
     text-align: center;
     padding: 10px;
 }
-
 tr {
     display: table-row;
+    border: #0056b3;
 }
-
+/* ----------------------------- Buttons ----------------------------- */
+button {
+    padding: 10px 20px;
+    background-color: purple;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: lightblue;
+}
+/* ----------------------------- Navbar ----------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #0c0037;
+    color: ghostwhite;
+}
+/* ----------------------------- Hamburger Menu ----------------------------- */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 100;
+}
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background: ghostwhite;
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+}
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #0c0037;
+    padding-top: 60px;
+    transition: left 0.4s ease-in-out;
+}
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.side-menu li {
+    padding: 15px;
+    text-align: center;
+}
+.side-menu a {
+    text-decoration: none;
+    color: ghostwhite;
+    font-size: 1.2rem;
+    display: block;
+}
+.side-menu.active {
+    left: 0;
+}
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+/* ----------------------------- Search Container ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box; 
+}
+.search-container button {
+    background: purple;
+    border: none;
+    color: ghostwhite;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 55px;
+}
+.search-container button:hover {
+    background: #0056b3;
+}
+/* ----------------------------- Footer ----------------------------- */
 footer, .social-icons {
     bottom: 0;
     padding: 20px;
-    color: white;
+    color: ghostwhite;
 }
-
 .footer a {
     margin: 0 10px;
     color: #007bff;
     text-decoration: none;
 }
-
 .footer a:hover {
     text-decoration: underline;
 }
@@ -190,7 +239,6 @@ footer, .social-icons {
     margin: 5px 0;
     color: #e8e5e5;
 }
-
 .social-icons a {
     margin: 0 5px;
     color: #007bff;
@@ -200,121 +248,49 @@ footer, .social-icons {
 .social-icons a:hover {
     color: #0056b3;
 }
-
-
+/* ----------------------------- Custom Cursor & Star Trail ----------------------------- */
 /* Custom Star Cursor */
 .cursor-star {
     position: fixed;
     width: 60px;
     height: 60px;
-    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
-    border-radius: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
+    border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
+    animation: pulseGlow 1.5s infinite ease-in-out;
+}
+/* Pulsing Glow Effect */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+    50% {
+        transform: scale(.6);
+        filter: blur(5px);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
 }
 /* Star Trail Effect */
 .star {
     position: fixed;
     width: 1px; 
     height: 1px; 
-    background-color: gold;
+    background-color: ghostwhite;
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     pointer-events: none;
-    animation: fadeOut 1s ease-out forwards;
+    animation: twinkle 1s ease-out forwards;
 }
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0);
-    }
-
-}
-
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background: #0c0037;
-    color: white;
-}
-
-/* Hamburger Menu */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 100; /* Make sure it's on top of everything, think layers */
-}
-
-.hamburger span { /* The three lines of the hamburger */
-    width: 30px;
-    height: 4px;
-    background: white;
-    margin: 5px 0;
-    transition: all 0.4s ease-in-out;
-}
-
-/* Side Menu (Hidden by default) */
-.side-menu {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Starts off-screen */
-    width: 250px;
-    height: 100vh;
-    background: #0c0037;
-    padding-top: 60px;
-    transition: left 0.4s ease-in-out;
-}
-
-/* Menu List */
-.side-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.side-menu li {
-    padding: 15px;
-    text-align: center;
-}
-
-.side-menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    display: block;
-}
-
-/* make the menu pop out when clicked*/
-.side-menu.active {
-    left: 0;
-}
-
-/* Hamburger Animation, three bars move when clicked */
-.hamburger.active span:nth-child(1) { /* Select the first 'span', meaning the first line */
-    transform: translateY(8px) rotate(45deg); /* Rotate 45 degrees */
-}
-
-.hamburger.active span:nth-child(2) { /* Select the second 'span', meaning the second line */
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) { /* Select the third 'span', meaning the third line */
-    transform: translateY(-8px) rotate(-45deg); /* Negative value to rotate in the opposite direction of the first span */
+/* Twinkle Animation */
+@keyframes twinkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
 }

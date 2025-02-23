@@ -1,8 +1,14 @@
+/* ---------------- Fonts ---------------- */
 @font-face {
     font-family: 'kidspace';
     src: url("assets/Kidspace-DEMO.ttf") format('truetype');
     font-weight: 200;
     font-style: light;
+}
+/* ---------------- Global Styles ---------------- */
+* {
+    box-sizing: border-box;
+    cursor: none; 
 }
 body {
     font-family: 'kidspace';
@@ -11,151 +17,33 @@ body {
     padding: 0;
     letter-spacing: 0.3em;
     text-align: center;
-    background-color: #003366;
+    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
     overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    color: ghostwhite;
 }
-
-* {
-    box-sizing: border-box;
-    cursor: none; 
-}
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 10px;
-    flex: 1; /* Allows it to expand within container */
-    border-radius: 5px;
-    max-width: 100%; /* Prevents overflow */
-}
-
-.search-container button {
-    background: #007bff;
-    border: none;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.search-container button:hover {
-    background: #0056b3;
-}
-
-.search-container button i {
-    margin-right: 5px;
-}
-
-h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: whitesmoke;
-}
-/* Custom Star Cursor */
-.cursor-star {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
-}
-/* Star Trail Effect */
-.star {
-    position: fixed;
-    width: 1px; 
-    height: 1px; 
-    background-color: whitesmoke;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    animation: fadeOut 1s ease-out forwards;
-}
-
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0);
-    }
-
-}
-/* Hamburger Menu */
-.hamburger {
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
-    z-index: 100; /* Make sure it's on top of everything, think layers */
-}
-
-.hamburger span { /* The three lines of the hamburger */
-    width: 30px;
-    height: 4px;
-    background: white;
-    margin: 5px 0;
-    transition: all 0.4s ease-in-out;
-}
-
-/* Side Menu (Hidden by default) */
-.side-menu {
+/* Background Video Styling */
+#space-video {
     position: fixed;
     top: 0;
-    left: -250px; /* Starts off-screen */
-    width: 250px;
-    height: 100vh;
-    background: #0c0037;
-    padding-top: 60px;
-    transition: left 0.4s ease-in-out;
-}
-
-/* Menu List */
-.side-menu ul {
-    list-style: none;
-    padding: 0;
-}
-
-.side-menu li {
-    padding: 15px;
-    text-align: center;
-}
-
-.side-menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 1.2rem;
-    display: block;
-}
-
-/* make the menu pop out when clicked*/
-.side-menu.active {
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
-
-/* Hamburger Animation, three bars move when clicked */
-.hamburger.active span:nth-child(1) { /* Select the first 'span', meaning the first line */
-    transform: translateY(8px) rotate(45deg); /* Rotate 45 degrees */
+/* Dark overlay for better readability */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    z-index: 0;
 }
-
-.hamburger.active span:nth-child(2) { /* Select the second 'span', meaning the second line */
-    opacity: 0;
-}
-
-.hamburger.active span:nth-child(3) { /* Select the third 'span', meaning the third line */
-    transform: translateY(-8px) rotate(-45deg); /* Negative value to rotate in the opposite direction of the first span */
-}
-
+/* ---------------- Headings ---------------- */
 h1 {
     color: navy;
     font-size: 60px;
@@ -163,29 +51,172 @@ h1 {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
-    height: 100%;
     background-color: whitesmoke;
 }
 h1, h3 {
     margin-bottom: 10px;
-  }  
+}
+/* ---------------- Forms & Buttons ---------------- */
 form div {
     margin-bottom: 15px;
-  }
-  
-  textarea, button {
+}
+textarea, button {
     margin-top: 10px;
-  }
-  button {
+}
+button {
     padding: 10px 20px;
     background-color: #0c0037;
     border: none;
     color: white;
     font-size: 16px;
     cursor: pointer;
-  }
-  
-  button:hover {
+}
+button:hover {
     background-color: #003366;
-  }
-  
+}
+/* ----------------------------- Search Bar ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+}
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box; 
+}
+.search-container button {
+    background: purple;
+    border: none;
+    color: ghostwhite;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 55px;
+}
+.search-container button:hover {
+    background: #0056b3;
+}
+/* ---------------- Custom Star Cursor and Trail ---------------- */
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    animation: pulseGlow 1.5s infinite ease-in-out;
+}
+/* Pulsing Glow Effect */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+    50% {
+        transform: scale(.6);
+        filter: blur(5px);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: ghostwhite;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: twinkle 1s ease-out forwards;
+}
+/* Twinkle Animation */
+@keyframes twinkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+/* ----------------------------- Navigation & Menus ----------------------------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #0c0037;
+    color: ghostwhite;
+}
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 150;
+}
+.hamburger span {
+    width: 30px;
+    height: 4px;
+    background: ghostwhite;
+    margin: 5px 0;
+    transition: all 0.4s ease-in-out;
+    position: relative; /* Ensure the spans are in the same stacking context */
+    z-index: 200; /* Ensure spans stay on top */
+}
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #0c0037;
+    padding-top: 60px;
+    transition: left 0.4s ease-in-out;
+    z-index: 100;
+}
+/* Menu List */
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.side-menu li {
+    padding: 15px;
+    text-align: center;
+}
+.side-menu li:hover {
+    background-color: rgb(2, 2, 112);
+}
+.side-menu a {
+    text-decoration: none;
+    color: ghostwhite;
+    font-size: 1.2rem;
+    display: block;
+}
+.side-menu.active {
+    left: 0;
+}
+/* Hamburger Menu Animation */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}

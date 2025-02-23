@@ -43,7 +43,66 @@ body {
     box-sizing: border-box;
     cursor: none; 
 }
-/* ----------------------------- Navbar & Menu Styling ----------------------------- */
+/* ----------------------------- Custom Cursor & Animations ----------------------------- */
+/* Custom Star Cursor */
+.cursor-star {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 10000;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: screen;
+    animation: pulseGlow 1.5s infinite ease-in-out;
+}
+/* Pulsing Glow Effect */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+    50% {
+        transform: scale(.6);
+        filter: blur(5px);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+}
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: ghostwhite;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: twinkle 1s ease-out forwards;
+}
+/* Twinkle Animation */
+@keyframes twinkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+/* ----------------------------- Header & Text Styles ----------------------------- */
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
+/* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -111,135 +170,69 @@ body {
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
 }
-/* ----------------------------- Header & Text Styles ----------------------------- */
-h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: ghostwhite;
-}
-#mission {
-    color: navy;
-    font-size: 20px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 80%;
-    height: 100%;
-    background-color: ghostwhite;
-    border-radius: 50px;
-}
-h2, h3 {
-    color: ghostwhite;
-    font-size: 40px;
-    letter-spacing: 10px;
-    margin: 0;
-    padding: 0;
-}
-/* ----------------------------- Team Member Styling ----------------------------- */
-.team-member {
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: ghostwhite;
-    border-radius: 50px;
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    align-items: center;
-    gap: 20px;
-    max-width: 100%;
-    box-sizing: border-box;
-    color: purple;
-}
-.team-member-info {
-    display: flex;
-    flex-direction: column;
-}
-.team-member img {
-    width: 100%;
-    height: auto;
-    max-width: 150px;
-    justify-self: start;
-}
-/* ----------------------------- Custom Cursor & Animations ----------------------------- */
-/* Custom Star Cursor */
-.cursor-star {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-    animation: pulseGlow 1.5s infinite ease-in-out;
-}
-/* Pulsing Glow Effect */
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-        filter: blur(1px);
-    }
-    50% {
-        transform: scale(.6);
-        filter: blur(5px);
-    }
-    100% {
-        transform: scale(1);
-        filter: blur(1px);
-    }
-}
-/* Star Trail Effect */
-.star {
-    position: fixed;
-    width: 1px; 
-    height: 1px; 
-    background-color: ghostwhite;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    animation: twinkle 1s ease-out forwards;
-}
-/* Twinkle Animation */
-@keyframes twinkle {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.5); }
-    100% { opacity: 0; transform: scale(0); }
-}
-/* ----------------------------- Search Bar Styling ----------------------------- */
+/* ----------------------------- Form Elements ----------------------------- */
 .search-container {
     display: flex;
     gap: 10px;
-    align-items: center;
+    align-items: stretch; /* Ensures both elements are the same height */
     width: 100%;
+    max-width: 400px; /* Optional: Set a reasonable max-width for layout */
 }
+/* Adjust input styling */
 .search-container input {
     border: none;
     outline: none;
     padding: 10px;
     flex-grow: 1;
     border-radius: 5px;
-    max-width: 100%;
-    white-space: nowrap;
-    box-sizing: border-box; 
+    box-sizing: border-box; /* Ensures padding doesn’t expand beyond container */
 }
+/* Adjust button styling */
 .search-container button {
+    width: 60px; /* Explicit width to prevent shrinking */
     background: purple;
     border: none;
     color: ghostwhite;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 55px;
+    flex-shrink: 0; /* Prevents the button from shrinking */
+    box-sizing: border-box; /* Ensures consistent sizing */
 }
 .search-container button:hover {
     background: #0056b3;
+}
+/* ----------------------------- Login & Form Box Styling ----------------------------- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    color:#0c0037;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    color:purple;
 }
