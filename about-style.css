@@ -166,15 +166,33 @@ h2, h3 {
     justify-self: start;
 }
 /* ----------------------------- Custom Cursor & Animations ----------------------------- */
+/* Custom Star Cursor */
 .cursor-star {
     position: fixed;
     width: 60px;
     height: 60px;
-    background: url(assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png) no-repeat center / contain;
+    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
+    border-radius: 50%;
     pointer-events: none;
     z-index: 10000;
     transform: translate(-50%, -50%);
-    mix-blend-mode: multiply;
+    mix-blend-mode: screen;
+    animation: pulseGlow 1.5s infinite ease-in-out;
+}
+/* Pulsing Glow Effect */
+@keyframes pulseGlow {
+    0% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
+    50% {
+        transform: scale(.6);
+        filter: blur(5px);
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(1px);
+    }
 }
 /* Star Trail Effect */
 .star {
@@ -185,17 +203,13 @@ h2, h3 {
     border-radius: 50%;
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
     pointer-events: none;
-    animation: fadeOut 1s ease-out forwards;
+    animation: twinkle 1s ease-out forwards;
 }
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-        transform: scale(1);
-    }
-    100% {
-        opacity: 0;
-        transform: scale(0);
-    }
+/* Twinkle Animation */
+@keyframes twinkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
 }
 /* ----------------------------- Search Bar Styling ----------------------------- */
 .search-container {
