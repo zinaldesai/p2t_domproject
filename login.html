@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOG IN</title>
+    <link rel="stylesheet" href="login-style.css">
+</head>
+<body>
+    <video autoplay loop muted playsinline id="space-video">
+        <source src="assets/906_purple_space_1080p_hd12801080p12000br.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <nav class="navbar">
+<!-- Hamburger Button -->
+        <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+<!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="search-container">
+            <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+            <button>
+                Search <i class="fas fa-search"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="login.html">Login or <br> Create Account</a></li>
+        </ul>
+    </div>
+    <main>
+        <h1>LOG IN OR BECOME A MEMBER</h1>
+        <br>
+        <br>
+        <h2>Welcome to the Code and Quill book club!</h2>
+        <div class="login-container">
+            <div class="login-box">
+<!-- Login Form -->
+                <form action="/login" method="POST">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Username" required>
+<!-- required ensures form validation by notifying users to fill out necessary fields -->
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Password" required>
+<!-- aria-label enhances the accessibility of icons, such as social media links, by giving them descriptive labels -->
+                    <button type="submit" aria-label="Login">Login</button>
+                    <button type="button" aria-label="Sign Up">Sign Up</button>
+                </form>
+            </div>
+        </div> 
+    </main>
+    <footer>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+            <p>8989 Cosmic Lane, Barnes Noble, NY USA</p>
+        </div>
+        <div class="social-icons">
+<!-- aria-label enhances the accessibility of icons, such as social media links, by giving them descriptive labels -->
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <p class="copyright">Bookstore &copy; 2025</p>
+    </footer>    
+    <script src="about-script.js" defer></script>
+</body>
+</html>

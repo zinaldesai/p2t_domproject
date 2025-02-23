@@ -1,23 +1,18 @@
-
-/* ---------------- Fonts ---------------- */
-@font-face {
+/* ----------------------------- Fonts & Global Styles ----------------------------- */
+@font-face { 
     font-family: 'kidspace';
     src: url("assets/Kidspace-DEMO.ttf") format('truetype');
     font-weight: 200;
     font-style: light;
 }
-/* ---------------- Global Styles ---------------- */
-* {
-    box-sizing: border-box;
-    cursor: none; 
-    font-family: Tahoma;
-}
-
 body {
-    width: 100%;
-    height: 100vh;
-    font-size: 16px;
+    font-family: 'kidspace';
+    font-size: 20px;
     margin: 0;
+    padding: 0;
+    letter-spacing: 0.3em;
+    text-align: center;
+    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
     overflow-x: hidden;
     position: relative;
     z-index: 1;
@@ -43,104 +38,12 @@ body {
     background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
     z-index: 0;
 }
-/* ---------------- Headings ---------------- */
-h1 {
-    color: navy;
-    font-size: 60px;
-    margin: 1em auto;
-    text-align: center;
-    font-family: 'kidspace';
-    letter-spacing: 0.1em;
-    padding: 20px;
-    width: 100%;
-    background-color: whitesmoke;
+/* Reset styles for all elements */
+* {
+    box-sizing: border-box;
+    cursor: none; 
 }
-h3 {
-    margin-bottom: 10px;
-    text-align: center;
-    font-size: 30px;
-}
-/* ---------------- Forms & Buttons ---------------- */
-form {
-    width: 60vw;
-    max-width: 500px;
-    min-width: 300px;
-    margin: 0 auto;
-    padding-bottom: 2em;
-    font-family: Tahoma;
-}
-
-fieldset {
-    border: none;
-    padding: 2rem 0;
-}
-  
-fieldset:last-of-type {
-    border-bottom: none;
-}
-  
-label {
-    display: block;
-    margin: 0.5rem 0;
-}
-
-textarea, input {
-    margin-bottom: 5px;
-    width: 100%;
-    min-height: 2em;
-    padding: 7px;
-}
-
-button {
-    display: block;
-    width: 60%;
-    margin: 1em auto;
-    height: 2em;
-    font-size: 16px;
-    background-color: #0c0037;
-    color: ghostwhite;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    
-}
-button:hover {
-    background-color: #003366;
-}
-
-/* ----------------------------- Search Bar ----------------------------- */
-.search-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-}
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 10px;
-    flex-grow: 1;
-    border-radius: 5px;
-    max-width: 100%;
-    white-space: nowrap;
-    box-sizing: border-box; 
-}
-.search-container button {
-    background: purple;
-    border: none;
-    color: ghostwhite;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 55px;
-}
-.search-container button:hover {
-    background: #0056b3;
-}
-/* ---------------- Custom Star Cursor and Trail ---------------- */
+/* ----------------------------- Custom Cursor & Animations ----------------------------- */
 /* Custom Star Cursor */
 .cursor-star {
     position: fixed;
@@ -186,6 +89,19 @@ button:hover {
     50% { opacity: 0.5; transform: scale(1.5); }
     100% { opacity: 0; transform: scale(0); }
 }
+/* ----------------------------- Header & Text Styles ----------------------------- */
+h1 {
+    color: navy;
+    font-size: 60px;
+    letter-spacing: 10px;
+    margin: 0 auto;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    box-sizing: border-box;
+}
+
 /* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
     display: flex;
@@ -253,4 +169,70 @@ button:hover {
 }
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+}
+/* ----------------------------- Form Elements ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: stretch; /* Ensures both elements are the same height */
+    width: 100%;
+    max-width: 400px; /* Optional: Set a reasonable max-width for layout */
+}
+/* Adjust input styling */
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensures padding doesn’t expand beyond container */
+}
+/* Adjust button styling */
+.search-container button {
+    width: 60px; /* Explicit width to prevent shrinking */
+    background: purple;
+    border: none;
+    color: ghostwhite;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents the button from shrinking */
+    box-sizing: border-box; /* Ensures consistent sizing */
+}
+.search-container button:hover {
+    background: #0056b3;
+}
+/* ----------------------------- Login & Form Box Styling ----------------------------- */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    padding: 40px;
+    background: #fff;
+    color:#0c0037;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    margin-top: 10px;
+    color:purple;
 }
