@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="contact.css">
     <title>Contact Us</title>
 </head>
@@ -20,33 +21,29 @@
   document.getElementById("space-video").playbackRate = 0.3;
 </script>
 
-  <nav class="navbar">
+<nav class="navbar">
 <!-- Hamburger Button -->
-            <div class="hamburger" id="hamburger" aria-label="Toggle Navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+<div class="search-container">
+  <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+  <button>Search</button>
+</div>
+</nav>
 <!-- Side Menu -->
-        <div class="side-menu" id="side-menu">
-            <div class="search-container">
-                <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
-                <button>
-                    Search <i class="fas fa-search"></i>
-                </button>
-            </div>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="login.html">Login or <br> Create Account</a></li>
-            </ul>
-        </div>
-  <main>
+<div class="side-menu" id="side-menu">
+<ul>
+  <li><a href="home.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="contact.html">Contact</a></li>
+  <li><a href="login.html">Login or <br> Create Account</a></li>
+</ul>
+</div>
     <h1>Contact Us</h1>
     <h3>We would love to hear from you!</h3>
-
       <section class="form">
         <form id="contactForm">
         <fieldset>
@@ -56,33 +53,30 @@
           <label for="pronouns"><strong>Pronouns:</strong></label>
           <input type="text" id="pronouns" placeholder="Ze/Hir">
 
-          <label for="email"><strong>Email:</strong></label>
-          <input type="email" id="email" required>
+          <label for="email" ><strong>Email:</strong></label>
+          <input type="email" id="email" placeholder="abc@email.com" required>
   
-          <label for="message"><strong>Send us a message!:</strong></label>
+          <label for="message"><strong>Send us a message:</strong></label>
           <textarea type="text" id="message" required></textarea>
+          <button type="submit" id="send" method="POST">Send</button>
         </fieldset>
-        <button type="submit" id="send">Send</button>
         </form>
       </section>
       
-  </main>
-    <footer>
-      <div class="footer-links">
+  <footer>
+    <nav class="footer-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Service</a>
-        <a href="#">Contact Us</a>
-        <p>8989 Cosmic Lane, Barnes Noble, NY USA</p>
-      </div>
-      <div class="social-icons">
-<!-- aria-label enhances the accessibility of icons, such as social media links, by giving them descriptive labels -->
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      </div>
-      <p class="copyright">Bookstore &copy; 2025</p>
-    </footer>  
+    </nav>
+    <div class="social-icons">
+        <a href="#" aria-label="Facebook"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa fa-twitter icon" aria-hidden="true"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa fa-instagram icon" aria-hidden="true"></i></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin icon" aria-hidden="true"></i></a>
+    </div>
+    <p>8989 Cosmic Lane, Barnes Noble, New York, USA</p>
+    <p class="copyright">Bookstore &copy; 2025</p>
+</footer>
     <script src="about-script.js" defer></script>  
 </body>
 </html>
