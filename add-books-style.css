@@ -17,6 +17,7 @@ body {
     position: relative;
     z-index: 1;
     color: #0056b3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 /* Reset styles for all elements */
 * {
@@ -48,9 +49,10 @@ h1{
     margin: 1em auto;
     text-align: center;
     font-family: 'kidspace';
-    font-size: 60px;
+    font-size: 50px;
     color: ghostwhite;
     padding: 10px;
+    letter-spacing: 20px;
 }
 caption {
     margin: 1em auto;
