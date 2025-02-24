@@ -17,6 +17,7 @@ body {
     position: relative;
     z-index: 1;
     color: ghostwhite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 /* Background Video Styling */
 #space-video {
@@ -91,19 +92,19 @@ body {
 }
 /* ----------------------------- Header & Text Styles ----------------------------- */
 h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(245, 245, 245, 0.735);
-    box-sizing: border-box;
+    font-size: 75px;
+    text-align: center;
+    color: ghostwhite;
+    border: 2px ghostwhite;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #0c00379a;
+    display: inline-block;
+    letter-spacing: 40px;
 }
 h2 {
-    font-size: 75px;
-    letter-spacing: 0.2em;
+    font-size: 45px;
+    letter-spacing: 10px;
     color: ghostwhite;
     text-align: center;
 }
@@ -111,12 +112,13 @@ h2 {
 h3 {
     font-size: 50px;
     text-align: center;
-    color:#0c0037;
-    border: 2px ghostwhite ;
+    color:ghostwhite;
+    border: 2px ghostwhite;
     border-radius: 10px;
     padding: 10px;
-    background-color: rgba(245, 245, 245, 0.735);
+    background-color: #0c003794;
     display: inline-block;
+    letter-spacing: 20px;
 }
 /* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
@@ -165,7 +167,8 @@ h3 {
     text-align: center;
 }
 .side-menu li:hover {
-    background-color: rgb(2, 2, 112);
+    background-color: fuchsia;
+    border-radius: 30px;
 }
 .side-menu a {
     text-decoration: none;
@@ -206,26 +209,26 @@ h3 {
 }
 .staff-picks a {
     text-decoration: none;
-    color: #0c0037;
+    color: ghostwhite;
     font-weight: bold;
     padding: 5px 10px;
     border: 2px ghostwhite;
     border-radius: 10px;
-    background-color: white;
+    background-color:#0c0037a5;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 .staff-picks a:hover {
     background-color: ghostwhite;
-    color: lightblue;
+    color: purple;
 }
 .staff-picks p {
     font-size: 20px;
-    color: #0c0037;
+    color: ghostwhite;
     font-weight: bold;
     padding: 5px 10px;
     border: 2px blue;
     border-radius: 10px;
-    background-color: ghostwhite;
+    background-color: #0c0037a7;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 /* Author of the Week */
@@ -236,13 +239,17 @@ h3 {
     gap: 20px;
     padding: 20px;
     border: 2px blue;
-    background-color: ghostwhite;
+    background-color: rgba(248, 248, 255, 0.731);
     border-radius: 10px;
     font-size: 20px;
 }
 .author-of-the-week li {
     list-style: none;
     font-size: 60px;
+}
+.author-of-the-week li :hover {
+    background-color: #0c0037af;
+    color: ghostwhite;
 }
 /* ----------------------------- Form Elements ----------------------------- */
 .search-container {
@@ -274,5 +281,6 @@ h3 {
     max-width: 55px;
 }
 .search-container button:hover {
-    background: #0056b3;
+    background: fuchsia;
+    border-radius: 30px;
 }
