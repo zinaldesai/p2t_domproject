@@ -1,3 +1,4 @@
+
 /* ---------------- Fonts ---------------- */
 @font-face {
     font-family: 'kidspace';
@@ -9,156 +10,16 @@
 * {
     box-sizing: border-box;
     cursor: none; 
+    font-family: Tahoma;
 }
-body {
-    font-family: 'kidspace';
-    font-size: 20px;
-    margin: 0;
-    padding: 0;
-    letter-spacing: 0.3em;
-    text-align: center;
-    background-image: url(assets/906_purple_space_1080p_hd12801080p12000br.mp4);
-    overflow-x: hidden;
-    position: relative;
-    z-index: 1;
-    color: ghostwhite;
-}
-/* Background Video Styling */
-#space-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-/* Dark overlay for better readability */
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
-    z-index: 0;
-}
-/* ---------------- Headings ---------------- */
-h1 {
-    color: navy;
-    font-size: 60px;
-    letter-spacing: 10px;
-    margin: 0 auto;
-    padding: 20px;
-    width: 100%;
-    background-color: whitesmoke;
-}
-h1, h3 {
-    margin-bottom: 10px;
-}
-/* ---------------- Forms & Buttons ---------------- */
-form div {
-    margin-bottom: 15px;
-}
-textarea, button {
-    margin-top: 10px;
-}
-button {
-    padding: 10px 20px;
-    background-color: #0c0037;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-button:hover {
-    background-color: #003366;
-}
-/* ----------------------------- Search Bar ----------------------------- */
-.search-container {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    width: 100%;
-}
-.search-container input {
-    border: none;
-    outline: none;
-    padding: 10px;
-    flex-grow: 1;
-    border-radius: 5px;
-    max-width: 100%;
-    white-space: nowrap;
-    box-sizing: border-box; 
-}
-.search-container button {
-    background: purple;
-    border: none;
-    color: ghostwhite;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 55px;
-}
-.search-container button:hover {
-    background: #0056b3;
-}
-/* ---------------- Custom Star Cursor and Trail ---------------- */
-/* Custom Star Cursor */
-.cursor-star {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    background: radial-gradient(circle, rgba(255,255,255,1) 20%, rgba(173,216,230,0.8) 50%, rgba(0,0,0,0) 80%);
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 10000;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: screen;
-    animation: pulseGlow 1.5s infinite ease-in-out;
-}
-/* Pulsing Glow Effect */
-@keyframes pulseGlow {
-    0% {
-        transform: scale(1);
-        filter: blur(1px);
-    }
-    50% {
-        transform: scale(.6);
-        filter: blur(5px);
-    }
-    100% {
-        transform: scale(1);
-        filter: blur(1px);
-    }
-}
-/* Star Trail Effect */
-.star {
-    position: fixed;
-    width: 1px; 
-    height: 1px; 
-    background-color: ghostwhite;
-    border-radius: 50%;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-    pointer-events: none;
-    animation: twinkle 1s ease-out forwards;
-}
-/* Twinkle Animation */
-@keyframes twinkle {
-    0% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(1.5); }
-    100% { opacity: 0; transform: scale(0); }
-}
+
 /* ----------------------------- Navigation & Menus ----------------------------- */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
-    background: #0c0037;
+    padding: 0.2rem 1rem;
+    background: purple;
     color: ghostwhite;
 }
 /* Hamburger Menu */
@@ -177,6 +38,7 @@ button:hover {
     position: relative; /* Ensure the spans are in the same stacking context */
     z-index: 200; /* Ensure spans stay on top */
 }
+
 /* Side Menu */
 .side-menu {
     position: fixed;
@@ -184,10 +46,9 @@ button:hover {
     left: -250px;
     width: 250px;
     height: 100vh;
-    background: #0c0037;
+    background: purple;
     padding-top: 60px;
     transition: left 0.4s ease-in-out;
-    z-index: 100;
 }
 /* Menu List */
 .side-menu ul {
@@ -199,7 +60,7 @@ button:hover {
     text-align: center;
 }
 .side-menu li:hover {
-    background-color: rgb(2, 2, 112);
+    background-color: rgb(128, 50, 128);
 }
 .side-menu a {
     text-decoration: none;
@@ -210,6 +71,7 @@ button:hover {
 .side-menu.active {
     left: 0;
 }
+
 /* Hamburger Menu Animation */
 .hamburger.active span:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
@@ -219,4 +81,188 @@ button:hover {
 }
 .hamburger.active span:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-size: 16px;
+    margin: 0;
+    overflow-x: hidden;
+    position: relative;
+    z-index: 1;
+    color: ghostwhite;
+}
+
+/* Background Video Styling */
+#space-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Dark overlay for better readability */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% black overlay */
+    z-index: 0;
+}
+
+/* ---------------- Headings ---------------- */
+h1 {
+    color: purple;
+    font-size: 60px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'kidspace';
+    letter-spacing: 0.1em;
+    padding: 20px;
+    width: 100%;
+    background-color: whitesmoke;
+}
+h3 {
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 40px;
+    letter-spacing: 0.1em;
+    font-family: 'kidspace';
+}
+/* ---------------- Forms & Buttons ---------------- */
+.form {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0px 40px;
+    font-family: Tahoma;
+    background-color: ghostwhite;
+    color: purple;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+fieldset {
+    border: none;
+    padding: 2rem 0;
+}
+  
+label {
+    display: block;
+    margin: 0.5rem 0;
+}
+
+textarea, input {
+    margin-bottom: 5px;
+    width: 100%;
+    min-height: 2em;
+    padding: 7px;
+}
+
+button {
+    display: block;
+    width: 20%;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 16px;
+    background-color: purple;
+    color: ghostwhite;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    
+}
+button:hover {
+    background-color: #003366;
+}
+
+footer {
+    text-align: center;
+    margin-top: auto;
+    position: relative;
+}
+/* ----------------------------- Search Bar ----------------------------- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 40%;
+}
+.search-container input {
+    border: none;
+    outline: none;
+    padding: 10px;
+    flex-grow: 1;
+    border-radius: 5px;
+    max-width: 100%;
+    white-space: nowrap;
+    box-sizing: border-box; 
+}
+.search-container button {
+    background: ghostwhite;
+    border: none;
+    color: purple;
+    padding: 10px 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 55px;
+}
+.search-container button:hover {
+    background: rgb(128, 50, 128);
+    color: ghostwhite;
+}
+
+/* Star Trail Effect */
+.star {
+    position: fixed;
+    width: 1px; 
+    height: 1px; 
+    background-color: ghostwhite;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    pointer-events: none;
+    animation: twinkle 1s ease-out forwards;
+}
+/* Twinkle Animation */
+@keyframes twinkle {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(0); }
+}
+
+/* Footer */
+footer {
+    margin-top: 2rem;
+    font-size: 16px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: ghostwhite;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: rgb(199, 199, 255);
+    text-decoration: underline; 
+}
+
+.icon {
+    color: white;
+    margin: 0 10px;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.icon:hover {
+    color:rgb(199, 199, 255)
 }

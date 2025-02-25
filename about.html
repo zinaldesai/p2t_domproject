@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DOM Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>About Us</title>
     <link rel="stylesheet" href="about-style.css">
 </head>
 <body>
@@ -18,15 +19,13 @@
             <span></span>
             <span></span>
         </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
+            <button>Search</button>
+        </div>
     </nav>
 <!-- Side Menu -->
     <div class="side-menu" id="side-menu">
-        <div class="search-container">
-            <input type="text" placeholder="Search by Title, Author, Keyword or ISBN">
-            <button>
-                Search <i class="fas fa-search"></i>
-            </button>
-        </div>
         <ul>
             <li><a href="home.html">Home</a></li>
             <li><a href="add-books.html">Add Books</a></li>
@@ -45,37 +44,25 @@
 <br>
     <section class="team">
         <div class="team-member">
-            <img src="assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png" alt="Team Member 1: Role or Name">
+            <img src="assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png" alt="Team Member 1: Janice Aine">
             <div class="team-member-info">
-                <h4>NAME</h4>
+                <h4 id="name">Janice Aine</h4>
                 <h5>pronouns</h5>
                 <p></p>
-                <nav> 
-                    <a href="https://www.linkedin.com">LINKEDIN</a>
+                <nav class="member-link"> 
+                    <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Janice Aine</a>
                 </nav> 
             </div>
         </div>
         <br>
         <div class="team-member">
-            <img src="assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png" alt="Team Member 2: Role or Name">
+            <img src="assets/zinaldesai.jpeg" alt="Team Member 3: Zinal Desai">
             <div class="team-member-info">
-                <h4>NAME</h4>
-                <h5>pronouns</h5>
-                <p></p>
-                <nav> 
-                    <a href="https://www.linkedin.com">LINKEDIN</a>
-                </nav> 
-            </div>
-        </div>
-        <br>
-        <div class="team-member">
-            <img src="assets/png-clipart-red-spaceship-rocket-icon-rocket-image-file-formats-cartoon.png" alt="Team Member 3: Role or Name">
-            <div class="team-member-info">
-                <h4>NAME</h4>
-                <h5>pronouns</h5>
-                <p></p>
-                <nav> 
-                    <a href="https://www.linkedin.com">LINKEDIN</a>
+                <h4 id="name">Zinal Desai</h4>
+                <h5>She/Her</h5>
+                <p>"Nothing is as permanent as a temporary solution that works"</p>
+                <nav class="member-link"> 
+                    <a href="https://www.linkedin.com/in/zinaldesai/" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Zinal Desai</a>
                 </nav>
             </div> 
         </div>
@@ -83,11 +70,11 @@
         <div class="team-member">
             <img src="assets/Rukia.png" alt="Team Member 4: Rukia Hinds ">
             <div class="team-member-info">
-                <h4>Rukia Hinds</h4>
+                <h4 id="name">Rukia Hinds</h4>
                 <h5>She/Her</h5>
                 <p>Hey Rukia here! "Just like a good book, every great coder starts with 'Hello, World!'"</p>
-                <nav> 
-                    <a href="https://www.linkedin.com/in/rukia-hinds/">LINKEDIN</a>
+                <nav class="member-link"> 
+                    <a href="https://www.linkedin.com/in/rukia-hinds/" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Rukia Hinds</a>
                 </nav> 
             </div>
         </div>
@@ -95,11 +82,11 @@
         <div class="team-member">
             <img src="assets/Laura.png" alt="Team Member 5: Laura Mbogo">
             <div class="team-member-info">
-                <h4>Laura Way</h4>
+                <h4 id="name">Laura Way</h4>
                 <h5>She/Her</h5>
                 <p>Hey! Laura here, fresh from making those API calls sing! So much fun. Welcome to Code and Quill! Quick reminder: We've got a selection of books that might not be around for long, so grab 'em while you can!</p>
-                <nav> 
-                    <a href="https://www.linkedin.com/in/mind-body-code/">LINKEDIN</a>
+                <nav class="member-link"> 
+                    <a href="https://www.linkedin.com/in/mind-body-code/" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Laura Way</a>
                 </nav>
             </div> 
         </div>
@@ -107,11 +94,11 @@
         <div class="team-member">
             <img src="assets/delani_weaver.jpg" alt="Team Member 6: Delani Weaver">
             <div id="team-member-info">
-                <h4>Delani Weaver</h4>
+                <h4 id="name">Delani Weaver</h4>
                 <h5>She/Her</h5>
                 <p>Coding and I are still in the awkward small-talk phase—lots of staring, confusion, and uncertainty, but I'm determined to make this relationship work.</p>
-                <nav> 
-                    <a href="www.linkedin.com/in/delani-weaver">LINKEDIN</a>
+                <nav class="member-link"> 
+                    <a href="www.linkedin.com/in/delani-weaver" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Delani Weaver</a>
                 </nav>
             </div> 
         </div>
@@ -119,11 +106,11 @@
         <div class="team-member">
             <img src="assets/LiaraLee.jpg"alt="Team Member 6: Liara Lee Tite">
                 <div id="team-member-info">
-                    <h4>Liara Lee Tite</h4>
+                    <h4 id="name">Liara Lee Tite</h4>
                     <h5>They/Them</h5>
                     <p>Most comfortable with CSS and HTML but learning Java Script and Python. I am basically the clean up crew for the worlds best team!</p>
-                    <nav> 
-                        <a href="www.linkedin.com/in/liara-lee-tite">LINKEDIN</a>
+                    <nav class="member-link"> 
+                        <a href="www.linkedin.com/in/liara-lee-tite" aria-label="LinkedIn"><i class="fa fa-linkedin-square" aria-hidden="true"></i></i>   Liara Lee Tite</a>
                     </nav> 
         </div>
     </section>
@@ -131,15 +118,15 @@
         <nav class="footer-links">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-            <a href="#">Contact Us</a>
-            <p>8989 Cosmic Lane, Barnes Noble, NY USA</p>
+            <a href="contact.html">Contact Us</a>
         </nav>
         <div class="social-icons">
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook icon" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fa fa-twitter icon" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram icon" aria-hidden="true"></i></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa fa-linkedin icon" aria-hidden="true"></i></a>
         </div>
+        <p>8989 Cosmic Lane, Barnes Noble, New York, USA</p>
         <p class="copyright">Bookstore &copy; 2025</p>
     </footer>
     <script src="about-script.js" defer></script>
